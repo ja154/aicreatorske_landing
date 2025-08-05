@@ -819,10 +819,6 @@ h1, h2, h3, h4, h5, h6 {
   height: 0.75rem;
 }
 
-.h-32{
-  height: 8rem;
-}
-
 .h-4{
   height: 1rem;
 }
@@ -853,14 +849,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .h-full{
   height: 100%;
-}
-
-.max-h-40{
-  max-height: 10rem;
-}
-
-.min-h-20{
-  min-height: 5rem;
 }
 
 .min-h-screen{
@@ -966,10 +954,6 @@ h1, h2, h3, h4, h5, h6 {
   cursor: pointer;
 }
 
-.resize-none{
-  resize: none;
-}
-
 .grid-cols-2{
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
@@ -986,10 +970,6 @@ h1, h2, h3, h4, h5, h6 {
   flex-wrap: wrap;
 }
 
-.items-start{
-  align-items: flex-start;
-}
-
 .items-center{
   align-items: center;
 }
@@ -1004,6 +984,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .gap-12{
   gap: 3rem;
+}
+
+.gap-2{
+  gap: 0.5rem;
 }
 
 .gap-4{
@@ -1070,10 +1054,6 @@ h1, h2, h3, h4, h5, h6 {
   overflow: hidden;
 }
 
-.overflow-y-auto{
-  overflow-y: auto;
-}
-
 .overflow-x-hidden{
   overflow-x: hidden;
 }
@@ -1134,6 +1114,11 @@ h1, h2, h3, h4, h5, h6 {
   background-color: rgb(30 144 255 / var(--tw-bg-opacity, 1));
 }
 
+.bg-accent-100{
+  --tw-bg-opacity: 1;
+  background-color: rgb(225 241 255 / var(--tw-bg-opacity, 1));
+}
+
 .bg-background{
   --tw-bg-opacity: 1;
   background-color: rgb(255 248 220 / var(--tw-bg-opacity, 1));
@@ -1168,6 +1153,11 @@ h1, h2, h3, h4, h5, h6 {
   background-color: rgb(210 105 30 / var(--tw-bg-opacity, 1));
 }
 
+.bg-primary-100{
+  --tw-bg-opacity: 1;
+  background-color: rgb(250 235 215 / var(--tw-bg-opacity, 1));
+}
+
 .bg-primary-50{
   --tw-bg-opacity: 1;
   background-color: rgb(253 245 240 / var(--tw-bg-opacity, 1));
@@ -1181,6 +1171,11 @@ h1, h2, h3, h4, h5, h6 {
 .bg-secondary{
   --tw-bg-opacity: 1;
   background-color: rgb(205 133 63 / var(--tw-bg-opacity, 1));
+}
+
+.bg-secondary-100{
+  --tw-bg-opacity: 1;
+  background-color: rgb(247 239 229 / var(--tw-bg-opacity, 1));
 }
 
 .bg-success{
@@ -1334,6 +1329,11 @@ h1, h2, h3, h4, h5, h6 {
   padding-right: 3rem;
 }
 
+.px-3{
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
 .px-4{
   padding-left: 1rem;
   padding-right: 1rem;
@@ -1347,6 +1347,11 @@ h1, h2, h3, h4, h5, h6 {
 .px-8{
   padding-left: 2rem;
   padding-right: 2rem;
+}
+
+.py-1{
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
 }
 
 .py-16{

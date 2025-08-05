@@ -271,167 +271,158 @@
         </div>
     </section>
 
-    <!-- Jenga Suite Tools Showcase -->
-    <section id="tools" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl sm:text-4xl font-headline font-bold text-text-primary mb-4">
-                    Meet the <span class="text-primary">Jenga Suite</span>
-                </h2>
-                <p class="text-lg text-text-secondary font-body max-w-3xl mx-auto">
-                    Four powerful AI tools designed specifically for African creators. 
-                    Experience the future of creative productivity with our interactive demonstrations.
-                </p>
+<!-- Jenga Suite Tools Showcase -->
+<section id="tools" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl sm:text-4xl font-headline font-bold text-text-primary mb-4">
+                Meet the <span class="text-primary">Jenga Suite</span>
+            </h2>
+            <p class="text-lg text-text-secondary font-body max-w-3xl mx-auto">
+                Four powerful AI tools designed specifically for African creators. 
+                Discover how these innovative solutions can transform your creative workflow.
+            </p>
+        </div>
+        
+        <div class="grid lg:grid-cols-2 gap-8">
+            <!-- JengaPrompts -->
+            <div class="bg-gradient-to-br from-primary-50 to-accent-50 rounded-2xl p-8 hover:shadow-2xl transition-all duration-300">
+                <div class="flex items-center mb-6">
+                    <div class="w-12 h-12 bg-primary rounded-xl flex items-center justify-center mr-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-headline font-bold text-text-primary">JengaPrompts</h3>
+                        <p class="text-text-secondary">AI-powered prompt generation</p>
+                    </div>
+                </div>
+                
+                <!-- Tool Description -->
+                <div class="bg-white rounded-lg p-6 mb-6">
+                    <p class="text-text-secondary mb-4">
+                        Transform your creative ideas into powerful AI prompts that deliver consistent, 
+                        high-quality results. Perfect for generating marketing copy, design briefs, 
+                        and creative concepts tailored to the African market.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-primary-100 text-primary px-3 py-1 rounded-full text-xs font-medium">Marketing Copy</span>
+                        <span class="bg-primary-100 text-primary px-3 py-1 rounded-full text-xs font-medium">Design Briefs</span>
+                        <span class="bg-primary-100 text-primary px-3 py-1 rounded-full text-xs font-medium">Content Ideas</span>
+                    </div>
+                </div>
+                
+                <div class="flex items-center justify-between">
+                    <span class="text-sm text-text-secondary">Used by 2,847 creators</span>
+                    <button class="text-accent hover:text-accent-600 font-semibold">Learn More →</button>
+                </div>
             </div>
             
-            <div class="grid lg:grid-cols-2 gap-8">
-                <!-- JengaPrompts -->
-                <div class="bg-gradient-to-br from-primary-50 to-accent-50 rounded-2xl p-8 hover:shadow-2xl transition-all duration-300">
-                    <div class="flex items-center mb-6">
-                        <div class="w-12 h-12 bg-primary rounded-xl flex items-center justify-center mr-4">
-                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-headline font-bold text-text-primary">JengaPrompts</h3>
-                            <p class="text-text-secondary">AI-powered prompt generation</p>
-                        </div>
+            <!-- VizPrompts Studio -->
+            <div class="bg-gradient-to-br from-secondary-50 to-success/10 rounded-2xl p-8 hover:shadow-2xl transition-all duration-300">
+                <div class="flex items-center mb-6">
+                    <div class="w-12 h-12 bg-secondary rounded-xl flex items-center justify-center mr-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                        </svg>
                     </div>
-                    
-                    <!-- Interactive Demo -->
-                    <div class="bg-white rounded-lg p-6 mb-6">
-                        <div class="mb-4">
-                            <label class="block text-sm font-medium text-text-secondary mb-2">Try it now:</label>
-                            <input type="text" placeholder="Enter your creative goal..." class="w-full p-3 border border-secondary-200 rounded-lg focus:input-focus" id="jenga-prompts-input" />
-                        </div>
-                        <button class="btn-primary w-full mb-4" onclick="generatePrompt()">
-                            Generate Prompt
-                        </button>
-                        <div class="bg-surface p-4 rounded-lg min-h-20" id="prompt-output">
-                            <div class="text-text-secondary text-sm">Generated prompt will appear here...</div>
-                        </div>
-                    </div>
-                    
-                    <div class="flex items-center justify-between">
-                        <span class="text-sm text-text-secondary">Used by 2,847 creators</span>
-                        <button class="text-accent hover:text-accent-600 font-semibold">Learn More →</button>
+                    <div>
+                        <h3 class="text-xl font-headline font-bold text-text-primary">VizPrompts Studio</h3>
+                        <p class="text-text-secondary">Real-time image creation</p>
                     </div>
                 </div>
                 
-                <!-- VizPrompts Studio -->
-                <div class="bg-gradient-to-br from-secondary-50 to-success/10 rounded-2xl p-8 hover:shadow-2xl transition-all duration-300">
-                    <div class="flex items-center mb-6">
-                        <div class="w-12 h-12 bg-secondary rounded-xl flex items-center justify-center mr-4">
-                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-headline font-bold text-text-primary">VizPrompts Studio</h3>
-                            <p class="text-text-secondary">Real-time image creation</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Interactive Demo -->
-                    <div class="bg-white rounded-lg p-6 mb-6">
-                        <div class="mb-4">
-                            <label class="block text-sm font-medium text-text-secondary mb-2">Describe your vision:</label>
-                            <textarea placeholder="A vibrant Kenyan sunset over Nairobi skyline..." class="w-full p-3 border border-secondary-200 rounded-lg focus:input-focus h-20 resize-none" id="viz-prompts-input"></textarea>
-                        </div>
-                        <button class="btn-primary w-full mb-4" onclick="generateImage()">
-                            Create Image
-                        </button>
-                        <div class="bg-surface rounded-lg h-32 flex items-center justify-center" id="image-output">
-                            <div class="text-text-secondary text-sm">Generated image preview will appear here</div>
-                        </div>
-                    </div>
-                    
-                    <div class="flex items-center justify-between">
-                        <span class="text-sm text-text-secondary">1,923 images created today</span>
-                        <button class="text-accent hover:text-accent-600 font-semibold">Try Now →</button>
+                <!-- Tool Description -->
+                <div class="bg-white rounded-lg p-6 mb-6">
+                    <p class="text-text-secondary mb-4">
+                        Create stunning visuals with AI-powered image generation optimized for African 
+                        aesthetics and cultural contexts. From logos to social media graphics, 
+                        bring your vision to life instantly.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-secondary-100 text-secondary px-3 py-1 rounded-full text-xs font-medium">Logo Design</span>
+                        <span class="bg-secondary-100 text-secondary px-3 py-1 rounded-full text-xs font-medium">Social Graphics</span>
+                        <span class="bg-secondary-100 text-secondary px-3 py-1 rounded-full text-xs font-medium">Brand Assets</span>
                     </div>
                 </div>
                 
-                <!-- VibeShareKE -->
-                <div class="bg-gradient-to-br from-accent-50 to-primary-50 rounded-2xl p-8 hover:shadow-2xl transition-all duration-300">
-                    <div class="flex items-center mb-6">
-                        <div class="w-12 h-12 bg-accent rounded-xl flex items-center justify-center mr-4">
-                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-headline font-bold text-text-primary">VibeShareKE</h3>
-                            <p class="text-text-secondary">Community content feed</p>
-                        </div>
+                <div class="flex items-center justify-between">
+                    <span class="text-sm text-text-secondary">1,923 images created today</span>
+                    <button class="text-accent hover:text-accent-600 font-semibold">Learn More →</button>
+                </div>
+            </div>
+            
+            <!-- VibeShareKE -->
+            <div class="bg-gradient-to-br from-accent-50 to-primary-50 rounded-2xl p-8 hover:shadow-2xl transition-all duration-300">
+                <div class="flex items-center mb-6">
+                    <div class="w-12 h-12 bg-accent rounded-xl flex items-center justify-center mr-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                        </svg>
                     </div>
-                    
-                    <!-- Interactive Demo -->
-                    <div class="bg-white rounded-lg p-6 mb-6">
-                        <div class="space-y-4 max-h-40 overflow-y-auto" id="vibe-feed">
-                            <div class="flex items-start space-x-3 p-3 bg-surface rounded-lg">
-                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop&crop=face" alt="User avatar" class="w-8 h-8 rounded-full" />
-                                <div class="flex-1">
-                                    <div class="text-sm font-semibold text-text-primary">Amina K.</div>
-                                    <div class="text-xs text-text-secondary">Just created an amazing logo with JengaPrompts! 🚀</div>
-                                </div>
-                            </div>
-                            <div class="flex items-start space-x-3 p-3 bg-surface rounded-lg">
-                                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=40&h=40&fit=crop&crop=face" alt="User avatar" class="w-8 h-8 rounded-full" />
-                                <div class="flex-1">
-                                    <div class="text-sm font-semibold text-text-primary">David M.</div>
-                                    <div class="text-xs text-text-secondary">VizPrompts Studio is a game-changer for my design work!</div>
-                                </div>
-                            </div>
-                        </div>
-                        <button class="w-full mt-4 text-accent hover:text-accent-600 font-semibold text-sm">
-                            View Full Feed →
-                        </button>
-                    </div>
-                    
-                    <div class="flex items-center justify-between">
-                        <span class="text-sm text-text-secondary">347 posts today</span>
-                        <button class="text-accent hover:text-accent-600 font-semibold">Join Community →</button>
+                    <div>
+                        <h3 class="text-xl font-headline font-bold text-text-primary">VibeShareKE</h3>
+                        <p class="text-text-secondary">Community content feed</p>
                     </div>
                 </div>
                 
-                <!-- JengaAgent -->
-                <div class="bg-gradient-to-br from-success/10 to-secondary-50 rounded-2xl p-8 hover:shadow-2xl transition-all duration-300">
-                    <div class="flex items-center mb-6">
-                        <div class="w-12 h-12 bg-success rounded-xl flex items-center justify-center mr-4">
-                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-headline font-bold text-text-primary">JengaAgent</h3>
-                            <p class="text-text-secondary">AI assistant capabilities</p>
-                        </div>
+                <!-- Tool Description -->
+                <div class="bg-white rounded-lg p-6 mb-6">
+                    <p class="text-text-secondary mb-4">
+                        Connect with Kenya's creative community through our dedicated social platform. 
+                        Share your work, get feedback, collaborate on projects, and discover 
+                        inspiration from fellow African creators.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-accent-100 text-accent px-3 py-1 rounded-full text-xs font-medium">Community Feed</span>
+                        <span class="bg-accent-100 text-accent px-3 py-1 rounded-full text-xs font-medium">Collaboration</span>
+                        <span class="bg-accent-100 text-accent px-3 py-1 rounded-full text-xs font-medium">Networking</span>
                     </div>
-                    
-                    <!-- Interactive Demo -->
-                    <div class="bg-white rounded-lg p-6 mb-6">
-                        <div class="mb-4">
-                            <label class="block text-sm font-medium text-text-secondary mb-2">Ask JengaAgent:</label>
-                            <input type="text" placeholder="How can I improve my content strategy?" class="w-full p-3 border border-secondary-200 rounded-lg focus:input-focus" id="jenga-agent-input" />
-                        </div>
-                        <button class="btn-primary w-full mb-4" onclick="askAgent()">
-                            Ask Agent
-                        </button>
-                        <div class="bg-surface p-4 rounded-lg min-h-20" id="agent-response">
-                            <div class="text-text-secondary text-sm">AI response will appear here...</div>
-                        </div>
+                </div>
+                
+                <div class="flex items-center justify-between">
+                    <span class="text-sm text-text-secondary">347 posts today</span>
+                    <button class="text-accent hover:text-accent-600 font-semibold">Learn More →</button>
+                </div>
+            </div>
+            
+            <!-- JengaAgent -->
+            <div class="bg-gradient-to-br from-success/10 to-secondary-50 rounded-2xl p-8 hover:shadow-2xl transition-all duration-300">
+                <div class="flex items-center mb-6">
+                    <div class="w-12 h-12 bg-success rounded-xl flex items-center justify-center mr-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                        </svg>
                     </div>
-                    
-                    <div class="flex items-center justify-between">
-                        <span class="text-sm text-text-secondary">1,456 questions answered today</span>
-                        <button class="text-accent hover:text-accent-600 font-semibold">Start Chat →</button>
+                    <div>
+                        <h3 class="text-xl font-headline font-bold text-text-primary">JengaAgent</h3>
+                        <p class="text-text-secondary">AI assistant capabilities</p>
                     </div>
+                </div>
+                
+                <!-- Tool Description -->
+                <div class="bg-white rounded-lg p-6 mb-6">
+                    <p class="text-text-secondary mb-4">
+                        Your personal AI creative assistant trained specifically for the Kenyan market. 
+                        Get expert advice on content strategy, marketing campaigns, and creative 
+                        direction tailored to local and international audiences.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-success-100 text-success px-3 py-1 rounded-full text-xs font-medium">Strategy Advice</span>
+                        <span class="bg-success-100 text-success px-3 py-1 rounded-full text-xs font-medium">Market Insights</span>
+                        <span class="bg-success-100 text-success px-3 py-1 rounded-full text-xs font-medium">Creative Direction</span>
+                    </div>
+                </div>
+                
+                <div class="flex items-center justify-between">
+                    <span class="text-sm text-text-secondary">1,456 questions answered today</span>
+                    <button class="text-accent hover:text-accent-600 font-semibold">Learn More →</button>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Newsletter Section -->
     <section id="newsletter" class="py-20 bg-surface">
@@ -1401,5 +1392,6 @@
             }
         }
     </script>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
 </body>
 </html>

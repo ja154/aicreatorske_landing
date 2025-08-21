@@ -5,64 +5,6 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  /* Primary Colors */
-  --color-primary: #D2691E; /* terracotta trust anchor */
-  --color-primary-50: #FDF5F0;
-  --color-primary-100: #FAEBD7;
-  --color-primary-200: #F4D4B8;
-  --color-primary-300: #EDBF99;
-  --color-primary-400: #E6A87A;
-  --color-primary-500: #D2691E; /* terracotta */
-  --color-primary-600: #B8591A;
-  --color-primary-700: #9E4916;
-  --color-primary-800: #843912;
-  --color-primary-900: #6A290E;
-
-  /* Secondary Colors */
-  --color-secondary: #CD853F; /* supporting warmth */
-  --color-secondary-50: #FBF7F2;
-  --color-secondary-100: #F7EFE5;
-  --color-secondary-200: #EFDFCB;
-  --color-secondary-300: #E7CFB1;
-  --color-secondary-400: #DFBF97;
-  --color-secondary-500: #CD853F; /* peru */
-  --color-secondary-600: #B67236;
-  --color-secondary-700: #9F5F2D;
-  --color-secondary-800: #884C24;
-  --color-secondary-900: #71391B;
-
-  /* Accent Colors */
-  --color-accent: #1E90FF; /* electric blue for conversion */
-  --color-accent-50: #F0F8FF;
-  --color-accent-100: #E1F1FF;
-  --color-accent-200: #C3E3FF;
-  --color-accent-300: #A5D5FF;
-  --color-accent-400: #87C7FF;
-  --color-accent-500: #1E90FF; /* dodger blue */
-  --color-accent-600: #1A7DE6;
-  --color-accent-700: #166ACC;
-  --color-accent-800: #1257B3;
-  --color-accent-900: #0E4499;
-
-  /* Background Colors */
-  --color-background: #FFF8DC; /* warm cream canvas */
-  --color-surface: #F5E6D3; /* subtle section separation */
-
-  /* Text Colors */
-  --color-text-primary: #2F1B14; /* high contrast dark brown */
-  --color-text-secondary: #8B4513; /* supporting brown */
-
-  /* Status Colors */
-  --color-success: #FFD700; /* golden yellow */
-  --color-warning: #FF6347; /* coral for urgency */
-  --color-error: #DC143C; /* crimson for validation */
-
-  /* Neutral Colors */
-  --color-white: #FFFFFF;
-  --color-black: #000000;
-}
-
 @layer base {
   body {
     font-family: 'Source Sans Pro', sans-serif;
@@ -90,22 +32,19 @@
 
 @layer components {
   .btn-primary {
-    @apply bg-accent text-white font-headline font-bold px-6 py-3 rounded-lg transition-all duration-250 ease-in-out;
-    box-shadow: 0 4px 12px rgba(30, 144, 255, 0.15);
+    @apply bg-primary text-white font-headline font-bold px-6 py-3 rounded-lg transition-all duration-250 ease-in-out;
   }
 
   .btn-primary:hover {
-    @apply bg-accent-600 transform -translate-y-0.5;
-    box-shadow: 0 6px 16px rgba(30, 144, 255, 0.25);
+    @apply bg-primary-600 transform -translate-y-0.5;
   }
 
   .card-testimonial {
     @apply bg-white p-6 rounded-lg;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   }
 
   .input-focus {
-    @apply border-2 border-accent outline-none;
+    @apply border-2 border-primary outline-none;
   }
 
   .section-divider {

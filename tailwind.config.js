@@ -1,67 +1,72 @@
 module.exports = {
-  content: ["./pages/*.{html,js}", "./index.html", "./js/*.js"],
+  content: [
+    "./public/**/*.{html,js}",
+    "./pages/*.{html,js}",
+    "./index.html",
+    "./js/*.js",
+  ],
   theme: {
     extend: {
       colors: {
-        // Primary Colors - Terracotta Trust Anchor
+        // Primary Colors
         primary: {
-          50: "#FDF5F0",
-          100: "#FAEBD7", // antique-white
-          200: "#F4D4B8",
-          300: "#EDBF99",
-          400: "#E6A87A",
-          500: "#D2691E", // chocolate
-          600: "#B8591A",
-          700: "#9E4916",
-          800: "#843912",
-          900: "#6A290E",
-          DEFAULT: "#D2691E", // chocolate
+          50: "#f7fafc",
+          100: "#edf2f7",
+          200: "#e2e8f0",
+          300: "#cbd5e0",
+          400: "#a0aec0",
+          500: "#718096",
+          600: "#4a5568",
+          700: "#2d3748",
+          800: "#1a202c",
+          900: "#171923",
+          DEFAULT: "#000000",
         },
         
-        // Secondary Colors - Supporting Warmth
+        // Secondary Colors
         secondary: {
-          50: "#FBF7F2",
-          100: "#F7EFE5",
-          200: "#EFDFCB",
-          300: "#E7CFB1",
-          400: "#DFBF97",
-          500: "#CD853F", // peru
-          600: "#B67236",
-          700: "#9F5F2D",
-          800: "#884C24",
-          900: "#71391B",
-          DEFAULT: "#CD853F", // peru
+          50: "#f7fafc",
+          100: "#edf2f7",
+          200: "#e2e8f0",
+          300: "#cbd5e0",
+          400: "#a0aec0",
+          500: "#718096",
+          600: "#4a5568",
+          700: "#2d3748",
+          800: "#1a202c",
+          900: "#171923",
+          DEFAULT: "#4a5568",
         },
         
-        // Accent Colors - Electric Blue for Conversion
+        // Accent Colors
         accent: {
-          50: "#F0F8FF", // alice-blue
-          100: "#E1F1FF",
-          200: "#C3E3FF",
-          300: "#A5D5FF",
-          400: "#87C7FF",
-          500: "#1E90FF", // dodger-blue
-          600: "#1A7DE6",
-          700: "#166ACC",
-          800: "#1257B3",
-          900: "#0E4499",
-          DEFAULT: "#1E90FF", // dodger-blue
+          50: "#f7fafc",
+          100: "#edf2f7",
+          200: "#e2e8f0",
+          300: "#cbd5e0",
+          400: "#a0aec0",
+          500: "#718096",
+          600: "#4a5568",
+          700: "#2d3748",
+          800: "#1a202c",
+          900: "#171923",
+          DEFAULT: "#a0aec0",
         },
         
         // Background Colors
-        background: "#FFF8DC", // cornsilk
-        surface: "#F5E6D3", // beige
+        background: "#ffffff",
+        surface: "#f7fafc",
         
         // Text Colors
         text: {
-          primary: "#2F1B14", // dark-brown
-          secondary: "#8B4513", // saddle-brown
+          primary: "#000000",
+          secondary: "#4a5568",
         },
         
         // Status Colors
-        success: "#FFD700", // gold
-        warning: "#FF6347", // tomato
-        error: "#DC143C", // crimson
+        success: "#2d3748",
+        warning: "#718096",
+        error: "#1a202c",
       },
       
       fontFamily: {
@@ -84,10 +89,10 @@ module.exports = {
       },
       
       boxShadow: {
-        'cta': '0 4px 12px rgba(30, 144, 255, 0.15)',
-        'cta-hover': '0 6px 16px rgba(30, 144, 255, 0.25)',
+        'cta': '0 4px 12px rgba(0, 0, 0, 0.1)',
+        'cta-hover': '0 6px 16px rgba(0, 0, 0, 0.15)',
         'testimonial': '0 2px 8px rgba(0, 0, 0, 0.1)',
-        'terracotta': '0 4px 12px rgba(210, 105, 30, 0.15)',
+        'terracotta': '0 4px 12px rgba(0, 0, 0, 0.1)',
       },
       
       borderWidth: {

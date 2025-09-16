@@ -11,8 +11,8 @@
     "tailwindcss-fluid-type": "^2.0.7"
   },
   "scripts": {
-    "build:css": "npx @dhiwise/component-tagger && npx tailwindcss -i ./css/tailwind.css -o ./css/main.css",
-    "watch:css": "npx @dhiwise/component-tagger && npx tailwindcss -i ./css/tailwind.css -o ./css/main.css --watch",
+    "build:css": "npx @dhiwise/component-tagger && npx tailwindcss -i ./public/css/tailwind.css -o ./public/css/main.css",
+    "watch:css": "npx @dhiwise/component-tagger && npx tailwindcss -i ./public/css/tailwind.css -o ./public/css/main.css --watch",
     "dev": "npm run watch:css"
   },
   "author": "",

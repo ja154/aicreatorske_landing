@@ -18,35 +18,46 @@
     <!-- Preload Critical Resources -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700;800&display=swap" as="style" />
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;500&display=swap" as="style" />
+    
+    <!-- Animation Styles -->
+    <style>
+        @keyframes ripple-animation {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+    </style>
 <script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Faicreators8702back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.6"></script>
 </head>
 <body class="bg-background text-text-primary overflow-x-hidden">
     
     <!-- Navigation Header -->
-    <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-sm z-50 border-b border-secondary-200">
+    <nav class="fixed top-0 w-full bg-slate-900/95 backdrop-blur-sm z-50 border-b border-purple-500/20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <!-- Logo -->
                 <div class="flex items-center">
-                    <svg class="w-10 h-10 text-primary" viewBox="0 0 40 40" fill="currentColor">
-                        <path d="M20 0L35 10v20L20 40L5 30V10L20 0z"/>
-                        <circle cx="20" cy="20" r="8" fill="white"/>
-                        <text x="20" y="25" text-anchor="middle" class="text-xs font-bold fill-primary">AI</text>
-                    </svg>
-                    <span class="ml-3 text-xl font-headline font-bold text-primary">AiCreatorsKE</span>
+                    <div class="w-10 h-10 bg-gradient-to-br from-purple-500 to-magenta-500 rounded-lg flex items-center justify-center">
+                        <span class="text-white font-headline font-bold text-lg">AI</span>
+                    </div>
+                    <span class="ml-3 text-xl font-headline font-bold text-white">AiCreatorsKE</span>
                 </div>
                 
                 <!-- Desktop Navigation -->
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="#community" class="text-text-secondary hover:text-primary transition-250">Community</a>
-                    <a href="https://majestic-kashata-c6572e.netlify.app/" target="_blank" rel="noopener noreferrer" class="text-text-secondary hover:text-primary transition-250">Bunifu Suite</a>
-                    <a href="https://aicreatorske-newsletter.beehiiv.com/" target="_blank" rel="noopener noreferrer" class="text-text-secondary hover:text-primary transition-250">Newsletter</a>
-                    <a href="#testimonials" class="text-text-secondary hover:text-primary transition-250">Success Stories</a>
-                    <a href="https://linktr.ee/JengoAI" target="_blank" rel="noopener noreferrer" class="btn-primary">Join Now</a>
+                    <a href="#community" class="text-slate-300 hover:text-purple-400 transition-colors duration-200">Community</a>
+                    <a href="https://majestic-kashata-c6572e.netlify.app/" target="_blank" rel="noopener noreferrer" class="text-slate-300 hover:text-purple-400 transition-colors duration-200">Bunifu Suite</a>
+                    <a href="https://aicreatorske-newsletter.beehiiv.com/" target="_blank" rel="noopener noreferrer" class="text-slate-300 hover:text-purple-400 transition-colors duration-200">Newsletter</a>
+                    <a href="#testimonials" class="text-slate-300 hover:text-purple-400 transition-colors duration-200">Success Stories</a>
+                    <button class="group relative px-6 py-2 font-headline font-bold text-white bg-gradient-to-r from-purple-600 to-magenta-600 rounded-lg overflow-hidden transition-all hover:shadow-glow-magenta">
+                        <div class="absolute inset-0 bg-gradient-to-r from-purple-500 to-magenta-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                        <a href="https://linktr.ee/JengoAI" target="_blank" rel="noopener noreferrer" class="relative">Join Now</a>
+                    </button>
                 </div>
                 
                 <!-- Mobile Menu Button -->
-                <button class="md:hidden p-2" id="mobile-menu-btn">
+                <button class="md:hidden p-2 text-white" id="mobile-menu-btn">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
                     </svg>
@@ -55,82 +66,84 @@
         </div>
         
         <!-- Mobile Menu -->
-        <div class="md:hidden hidden bg-white border-t border-secondary-200" id="mobile-menu">
+        <div class="md:hidden hidden bg-slate-900 border-t border-purple-500/20" id="mobile-menu">
             <div class="px-4 py-2 space-y-2">
-                <a href="#community" class="block py-2 text-text-secondary">Community</a>
-                <a href="https://majestic-kashata-c6572e.netlify.app/" target="_blank" rel="noopener noreferrer" class="block py-2 text-text-secondary">Bunifu Suite</a>
-                <a href="https://aicreatorske-newsletter.beehiiv.com/" target="_blank" rel="noopener noreferrer" class="block py-2 text-text-secondary">Newsletter</a>
-                <a href="#testimonials" class="block py-2 text-text-secondary">Success Stories</a>
-                <a href="https://linktr.ee/JengoAI" target="_blank" rel="noopener noreferrer" class="w-full btn-primary mt-2">Join Now</a>
+                <a href="#community" class="block py-2 text-slate-300">Community</a>
+                <a href="https://majestic-kashata-c6572e.netlify.app/" target="_blank" rel="noopener noreferrer" class="block py-2 text-slate-300">Bunifu Suite</a>
+                <a href="https://aicreatorske-newsletter.beehiiv.com/" target="_blank" rel="noopener noreferrer" class="block py-2 text-slate-300">Newsletter</a>
+                <a href="#testimonials" class="block py-2 text-slate-300">Success Stories</a>
+                <a href="https://linktr.ee/JengoAI" target="_blank" rel="noopener noreferrer" class="w-full py-2 px-4 bg-gradient-to-r from-purple-600 to-magenta-600 text-white rounded-lg font-bold mt-2 inline-block">Join Now</a>
             </div>
         </div>
     </nav>
 
     <div class="h-16"></div>
-    <!-- Hero Section with Particle Effects -->
-    <section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-primary-50 to-accent-50">
-        <!-- Animated Background Particles -->
-        <div class="absolute inset-0 overflow-hidden">
-            <div class="particle absolute w-2 h-2 bg-accent rounded-full opacity-60 animate-pulse" style="top: 20%; left: 10%; animation-delay: 0s;"></div>
-            <div class="particle absolute w-3 h-3 bg-primary rounded-full opacity-40 animate-pulse" style="top: 60%; left: 80%; animation-delay: 1s;"></div>
-            <div class="particle absolute w-1 h-1 bg-success rounded-full opacity-80 animate-pulse" style="top: 40%; left: 60%; animation-delay: 2s;"></div>
-            <div class="particle absolute w-2 h-2 bg-secondary rounded-full opacity-50 animate-pulse" style="top: 80%; left: 30%; animation-delay: 1.5s;"></div>
-        </div>
+    <!-- Hero Section with Vibrant Gradient -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+        <!-- Animated Gradient Overlay -->
+        <div class="absolute inset-0 bg-gradient-to-tr from-purple-500/20 via-magenta-500/10 to-cyan-500/20 mix-blend-screen"></div>
         
-        <!-- Geometric Pattern Overlay -->
-        <div class="absolute inset-0 opacity-10">
-            <svg class="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-                <polygon points="0,0 50,25 100,0 100,50 50,75 0,50" fill="currentColor" class="text-primary"/>
-            </svg>
-        </div>
+        <!-- Geometric Shapes -->
+        <div class="absolute top-20 right-10 w-96 h-96 bg-gradient-to-br from-purple-500 to-magenta-500 rounded-full opacity-20 blur-3xl"></div>
+        <div class="absolute bottom-20 left-10 w-80 h-80 bg-gradient-to-tr from-cyan-500 to-purple-500 rounded-full opacity-20 blur-3xl"></div>
         
         <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <!-- Main Headline -->
-            <h1 class="text-4xl sm:text-5xl lg:text-7xl font-headline font-extrabold text-text-primary mb-6 leading-tight">
-                AI for Creativity and Productivity
+            <h1 class="text-5xl sm:text-6xl lg:text-7xl font-headline font-extrabold text-white mb-6 leading-tight">
+                AI for <span class="bg-gradient-to-r from-purple-400 via-magenta-400 to-cyan-400 bg-clip-text text-transparent">Creativity</span>
+                <br>and Productivity
             </h1>
             
             <!-- Subheadline -->
-            <p class="text-lg sm:text-xl lg:text-2xl text-text-secondary mb-8 max-w-4xl mx-auto font-body">
-                Connect with <span class="font-semibold text-primary">5,000+ Kenyan creators</span> pioneering AI-powered creativity. 
+            <p class="text-lg sm:text-xl lg:text-2xl text-slate-200 mb-8 max-w-4xl mx-auto font-body">
+                Connect with <span class="font-semibold text-transparent bg-gradient-to-r from-purple-300 to-magenta-300 bg-clip-text">5,000+ Kenyan creators</span> pioneering AI-powered creativity. 
                 Access exclusive tools, join expert discussions, and accelerate your creative potential.
             </p>
             
             <!-- Real-time Community Statistics -->
             <div class="flex flex-wrap justify-center gap-6 mb-10">
-                <div class="bg-white/80 backdrop-blur-sm rounded-lg px-6 py-4 shadow-testimonial">
-                    <div class="text-2xl font-headline font-bold text-primary" id="active-members">0</div>
-                    <div class="text-sm text-text-secondary">Active Members</div>
+                <div class="bg-white/10 backdrop-blur-md rounded-xl px-6 py-4 border border-white/20 hover:bg-white/20 transition-all">
+                    <div class="text-3xl font-headline font-bold bg-gradient-to-r from-purple-300 to-magenta-300 bg-clip-text text-transparent" id="active-members">0</div>
+                    <div class="text-sm text-slate-300">Active Members</div>
                 </div>
-                <div class="bg-white/80 backdrop-blur-sm rounded-lg px-6 py-4 shadow-testimonial">
-                    <div class="text-2xl font-headline font-bold text-accent" id="projects-today">0</div>
-                    <div class="text-sm text-text-secondary">Projects Today</div>
+                <div class="bg-white/10 backdrop-blur-md rounded-xl px-6 py-4 border border-white/20 hover:bg-white/20 transition-all">
+                    <div class="text-3xl font-headline font-bold bg-gradient-to-r from-magenta-300 to-cyan-300 bg-clip-text text-transparent" id="projects-today">0</div>
+                    <div class="text-sm text-slate-300">Projects Today</div>
                 </div>
-                <div class="bg-white/80 backdrop-blur-sm rounded-lg px-6 py-4 shadow-testimonial">
-                    <div class="text-2xl font-headline font-bold text-success" id="tools-accessed">0</div>
-                    <div class="text-sm text-text-secondary">Tools This Week</div>
+                <div class="bg-white/10 backdrop-blur-md rounded-xl px-6 py-4 border border-white/20 hover:bg-white/20 transition-all">
+                    <div class="text-3xl font-headline font-bold bg-gradient-to-r from-cyan-300 to-purple-300 bg-clip-text text-transparent" id="tools-accessed">0</div>
+                    <div class="text-sm text-slate-300">Tools This Week</div>
                 </div>
             </div>
             
             <!-- Primary CTAs -->
             <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-                <button class="btn-primary text-lg px-8 py-4 w-full sm:w-auto" onclick="scrollToSubscription()">
-                    Start Creating Today
-                    <svg class="w-5 h-5 ml-2 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
-                    </svg>
+                <button class="group relative px-8 py-4 text-lg font-headline font-bold text-white bg-gradient-to-r from-purple-600 to-magenta-600 rounded-lg overflow-hidden transition-all duration-300 hover:shadow-glow-magenta w-full sm:w-auto" onclick="scrollToSubscription()">
+                    <div class="absolute inset-0 bg-gradient-to-r from-purple-500 to-magenta-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="relative flex items-center justify-center">
+                        Start Creating Today
+                        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                        </svg>
+                    </div>
                 </button>
-                <button class="bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-white font-headline font-bold px-8 py-4 rounded-lg transition-250 w-full sm:w-auto" onclick="scrollToTools()">
+                <button class="px-8 py-4 text-lg font-headline font-bold text-purple-400 bg-transparent border-2 border-purple-400 rounded-lg hover:bg-purple-500/10 hover:text-purple-300 transition-all w-full sm:w-auto" onclick="scrollToTools()">
                     Explore Tools
                 </button>
             </div>
             
             <!-- Hero Image -->
             <div class="relative max-w-4xl mx-auto">
-                <svg class="w-full h-64 sm:h-80 lg:h-96 object-cover rounded-2xl shadow-2xl" width="2072" height="384" viewBox="0 0 2072 384" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect width="2072" height="384" rx="16" fill="black"/>
-</svg>
-                <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-2xl"></div>
+                <div class="relative h-64 sm:h-80 lg:h-96 rounded-2xl overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-br from-purple-600 via-magenta-600 to-cyan-600"></div>
+                    <div class="absolute inset-0 bg-gradient-to-tr from-black/30 via-transparent to-black/30"></div>
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="text-center">
+                            <div class="text-6xl mb-2">✨</div>
+                            <p class="text-white font-bold">AI-Powered Creative Suite</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -140,11 +153,11 @@
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid lg:grid-cols-2 gap-12 items-center">
                 <div>
-                    <h2 class="text-3xl sm:text-4xl font-headline font-bold text-text-primary mb-6">
+                    <h2 class="text-4xl sm:text-5xl font-headline font-bold text-slate-900 mb-6">
                         Breaking Creative Barriers in 
-                        <span class="text-primary">East Africa</span>
+                        <span class="bg-gradient-to-r from-purple-600 to-magenta-600 bg-clip-text text-transparent">East Africa</span>
                     </h2>
-                    <p class="text-lg text-text-secondary mb-6 font-body">
+                    <p class="text-lg text-slate-600 mb-6 font-body leading-relaxed">
                         Too many talented Kenyan creators struggle in isolation, lacking access to cutting-edge AI tools 
                         and supportive communities. While global markets advance rapidly, local talent remains disconnected 
                         from the AI revolution transforming creative industries worldwide.
@@ -152,31 +165,41 @@
                     
                     <!-- Problem Statistics -->
                     <div class="grid grid-cols-2 gap-4 mb-8">
-                        <div class="bg-surface p-4 rounded-lg">
-                            <div class="text-2xl font-headline font-bold text-warning">73%</div>
-                            <div class="text-sm text-text-secondary">Creators lack AI tool access</div>
+                        <div class="bg-gradient-to-br from-purple-50 to-magenta-50 p-6 rounded-xl border border-purple-200">
+                            <div class="text-3xl font-headline font-bold bg-gradient-to-r from-purple-600 to-magenta-600 bg-clip-text text-transparent">73%</div>
+                            <div class="text-sm text-slate-600 mt-2">Creators lack AI tool access</div>
                         </div>
-                        <div class="bg-surface p-4 rounded-lg">
-                            <div class="text-2xl font-headline font-bold text-error">89%</div>
-                            <div class="text-sm text-text-secondary">Work without community support</div>
+                        <div class="bg-gradient-to-br from-cyan-50 to-purple-50 p-6 rounded-xl border border-cyan-200">
+                            <div class="text-3xl font-headline font-bold bg-gradient-to-r from-cyan-600 to-purple-600 bg-clip-text text-transparent">89%</div>
+                            <div class="text-sm text-slate-600 mt-2">Work without community support</div>
                         </div>
                     </div>
                     
-                    <p class="text-lg text-text-primary font-semibold mb-6">
+                    <p class="text-lg text-slate-700 font-semibold mb-6">
                         AiCreatorsKE changes everything. Join Kenya's most innovative creative community where 
                         AI meets African creativity.
                     </p>
                     
-                    <a href="https://linktr.ee/JengoAI" target="_blank" rel="noopener noreferrer" class="btn-primary">
-                        Join Our Community
-                    </a>
+                    <button class="group relative px-8 py-4 font-headline font-bold text-white bg-gradient-to-r from-purple-600 to-magenta-600 rounded-lg overflow-hidden transition-all hover:shadow-glow-magenta">
+                        <div class="absolute inset-0 bg-gradient-to-r from-purple-500 to-magenta-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                        <a href="https://linktr.ee/JengoAI" target="_blank" rel="noopener noreferrer" class="relative">
+                            Join Our Community
+                        </a>
+                    </button>
                 </div>
                 
                 <div class="relative">
-                    <svg class="w-full h-96 object-cover rounded-2xl shadow-xl" width="2071" height="384" viewBox="0 0 2071 384" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect width="2071" height="384" rx="16" fill="black"/>
-</svg>
-                    <div class="absolute -bottom-6 -right-6 bg-primary text-white p-6 rounded-xl shadow-terracotta">
+                    <div class="relative h-96 rounded-2xl overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-br from-purple-600 via-magenta-600 to-cyan-600"></div>
+                        <div class="absolute inset-0 bg-gradient-to-tr from-black/40 via-transparent to-black/40"></div>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="text-center">
+                                <div class="text-7xl mb-2">🚀</div>
+                                <p class="text-white font-bold text-lg">Kenya's Creative Revolution</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="absolute -bottom-6 -right-6 bg-gradient-to-r from-purple-600 to-magenta-600 text-white p-6 rounded-xl shadow-glow-magenta">
                         <div class="text-2xl font-headline font-bold">5,000+</div>
                         <div class="text-sm">Active Creators</div>
                     </div>
@@ -186,106 +209,127 @@
     </section>
 
     <!-- Key Benefits Section -->
-    <section class="py-20 bg-white">
+    <section class="py-20 bg-gradient-to-b from-white to-slate-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl sm:text-4xl font-headline font-bold text-text-primary mb-4">
-                    Why Join <span class="text-primary">AiCreatorsKE?</span>
+                <h2 class="text-4xl sm:text-5xl font-headline font-bold text-slate-900 mb-4">
+                    Why Join <span class="bg-gradient-to-r from-purple-600 to-magenta-600 bg-clip-text text-transparent">AiCreatorsKE?</span>
                 </h2>
-                <p class="text-lg text-text-secondary font-body max-w-2xl mx-auto">
+                <p class="text-lg text-slate-600 font-body max-w-2xl mx-auto">
                     Everything you need to transform your creative career
                 </p>
             </div>
             
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Benefit 1: Access to Tools -->
-                <div class="bg-surface rounded-xl p-8 shadow-testimonial hover:shadow-xl transition-all duration-300 group">
-                    <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
-                        <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10l-5.5-5.5M19 11a8 8 0 11-16 0 8 8 0 0116 0zm-5.5-2.5L9 9m0 0H7"/>
-                        </svg>
+                <!-- Benefit 1: Purple -->
+                <div class="group relative rounded-xl overflow-hidden bg-white shadow-md hover:shadow-xl transition-all duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-purple-600/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="relative p-8">
+                        <div class="w-14 h-14 bg-gradient-to-br from-purple-500 to-purple-600 rounded-lg flex items-center justify-center mb-6 group-hover:shadow-glow-purple transition-all">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10l-5.5-5.5M19 11a8 8 0 11-16 0 8 8 0 0116 0zm-5.5-2.5L9 9m0 0H7"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-headline font-bold text-slate-900 mb-3">AI-Powered Tools</h3>
+                        <p class="text-slate-600">Access cutting-edge AI tools specifically built for Kenyan creators. From prompt generation to image creation, we've got you covered.</p>
                     </div>
-                    <h3 class="text-xl font-headline font-bold text-text-primary mb-3">AI-Powered Tools</h3>
-                    <p class="text-text-secondary">Access cutting-edge AI tools specifically built for Kenyan creators. From prompt generation to image creation, we've got you covered.</p>
                 </div>
 
-                <!-- Benefit 2: Community -->
-                <div class="bg-surface rounded-xl p-8 shadow-testimonial hover:shadow-xl transition-all duration-300 group">
-                    <div class="w-14 h-14 bg-accent/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-accent/20 transition-colors">
-                        <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292m0 0H7.646a4 4 0 110 5.292m4.354 0h4.646a4 4 0 110-5.292m0 0a4 4 0 010-5.292"/>
-                        </svg>
+                <!-- Benefit 2: Magenta -->
+                <div class="group relative rounded-xl overflow-hidden bg-white shadow-md hover:shadow-xl transition-all duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-br from-magenta-500/10 to-magenta-600/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="relative p-8">
+                        <div class="w-14 h-14 bg-gradient-to-br from-magenta-500 to-magenta-600 rounded-lg flex items-center justify-center mb-6 group-hover:shadow-glow-magenta transition-all">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292m0 0H7.646a4 4 0 110 5.292m4.354 0h4.646a4 4 0 110-5.292m0 0a4 4 0 010-5.292"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-headline font-bold text-slate-900 mb-3">5,000+ Creators</h3>
+                        <p class="text-slate-600">Connect, collaborate, and learn from a thriving community of Kenyan creators pushing the boundaries of AI creativity.</p>
                     </div>
-                    <h3 class="text-xl font-headline font-bold text-text-primary mb-3">5,000+ Creators</h3>
-                    <p class="text-text-secondary">Connect, collaborate, and learn from a thriving community of Kenyan creators pushing the boundaries of AI creativity.</p>
                 </div>
 
-                <!-- Benefit 3: Expert Guidance -->
-                <div class="bg-surface rounded-xl p-8 shadow-testimonial hover:shadow-xl transition-all duration-300 group">
-                    <div class="w-14 h-14 bg-secondary/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-secondary/20 transition-colors">
-                        <svg class="w-8 h-8 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-                        </svg>
+                <!-- Benefit 3: Cyan -->
+                <div class="group relative rounded-xl overflow-hidden bg-white shadow-md hover:shadow-xl transition-all duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-cyan-600/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="relative p-8">
+                        <div class="w-14 h-14 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-lg flex items-center justify-center mb-6 group-hover:shadow-glow-cyan transition-all">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-headline font-bold text-slate-900 mb-3">Expert Support</h3>
+                        <p class="text-slate-600">Get answers from our AI agent, weekly training sessions, and direct support from experienced creators.</p>
                     </div>
-                    <h3 class="text-xl font-headline font-bold text-text-primary mb-3">Expert Support</h3>
-                    <p class="text-text-secondary">Get answers from our AI agent, weekly training sessions, and direct support from experienced creators.</p>
                 </div>
 
-                <!-- Benefit 4: Market Access -->
-                <div class="bg-surface rounded-xl p-8 shadow-testimonial hover:shadow-xl transition-all duration-300 group">
-                    <div class="w-14 h-14 bg-success/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-success/20 transition-colors">
-                        <svg class="w-8 h-8 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.646 7.23a2 2 0 01-1.788 1.106H2a2 2 0 01-2-2V8a2 2 0 012-2h1.657a2 2 0 011.414.586l2.828 2.829a2 2 0 001.414.586h2.657a2 2 0 012 2v1z"/>
-                        </svg>
+                <!-- Benefit 4: Lime -->
+                <div class="group relative rounded-xl overflow-hidden bg-white shadow-md hover:shadow-xl transition-all duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-br from-lime-500/10 to-lime-600/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="relative p-8">
+                        <div class="w-14 h-14 bg-gradient-to-br from-lime-500 to-lime-600 rounded-lg flex items-center justify-center mb-6">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.646 7.23a2 2 0 01-1.788 1.106H2a2 2 0 01-2-2V8a2 2 0 012-2h1.657a2 2 0 011.414.586l2.828 2.829a2 2 0 001.414.586h2.657a2 2 0 012 2v1z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-headline font-bold text-slate-900 mb-3">Become Visible</h3>
+                        <p class="text-slate-600">Showcase your work on VibeShareKE, get featured in our newsletter, and attract high-value clients globally.</p>
                     </div>
-                    <h3 class="text-xl font-headline font-bold text-text-primary mb-3">Become Visible</h3>
-                    <p class="text-text-secondary">Showcase your work on VibeShareKE, get featured in our newsletter, and attract high-value clients globally.</p>
                 </div>
 
-                <!-- Benefit 5: Scale Quickly -->
-                <div class="bg-surface rounded-xl p-8 shadow-testimonial hover:shadow-xl transition-all duration-300 group">
-                    <div class="w-14 h-14 bg-warning/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-warning/20 transition-colors">
-                        <svg class="w-8 h-8 text-warning" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-                        </svg>
+                <!-- Benefit 5: Orange -->
+                <div class="group relative rounded-xl overflow-hidden bg-white shadow-md hover:shadow-xl transition-all duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-br from-orange-500/10 to-orange-600/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="relative p-8">
+                        <div class="w-14 h-14 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center mb-6">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-headline font-bold text-slate-900 mb-3">Scale Fast</h3>
+                        <p class="text-slate-600">10x your productivity with AI tools. What used to take weeks now takes hours. Deliver more projects and earn more.</p>
                     </div>
-                    <h3 class="text-xl font-headline font-bold text-text-primary mb-3">Scale Fast</h3>
-                    <p class="text-text-secondary">10x your productivity with AI tools. What used to take weeks now takes hours. Deliver more projects and earn more.</p>
                 </div>
 
-                <!-- Benefit 6: Regular Updates -->
-                <div class="bg-surface rounded-xl p-8 shadow-testimonial hover:shadow-xl transition-all duration-300 group">
-                    <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
-                        <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                        </svg>
+                <!-- Benefit 6: Pink -->
+                <div class="group relative rounded-xl overflow-hidden bg-white shadow-md hover:shadow-xl transition-all duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-br from-pink-500/10 to-pink-600/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="relative p-8">
+                        <div class="w-14 h-14 bg-gradient-to-br from-pink-500 to-pink-600 rounded-lg flex items-center justify-center mb-6">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-headline font-bold text-slate-900 mb-3">Stay Ahead</h3>
+                        <p class="text-slate-600">Weekly updates on new AI tools, market trends, and strategies. Never be left behind in the AI revolution.</p>
                     </div>
-                    <h3 class="text-xl font-headline font-bold text-text-primary mb-3">Stay Ahead</h3>
-                    <p class="text-text-secondary">Weekly updates on new AI tools, market trends, and strategies. Never be left behind in the AI revolution.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Social Proof Statistics Banner -->
-    <section class="py-16 bg-primary text-white">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section class="py-16 bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900 border-y border-purple-500/20 relative overflow-hidden">
+        <!-- Animated gradient overlay -->
+        <div class="absolute inset-0 bg-gradient-to-tr from-purple-500/10 via-magenta-500/5 to-cyan-500/10 mix-blend-screen"></div>
+        
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-                <div>
-                    <div class="text-4xl font-headline font-bold mb-2">5,000+</div>
-                    <p class="text-primary-100">Active Creators</p>
+                <div class="group">
+                    <div class="text-5xl font-headline font-bold bg-gradient-to-r from-purple-300 to-magenta-300 bg-clip-text text-transparent mb-2 group-hover:from-purple-200 group-hover:to-magenta-200 transition-all">5,000+</div>
+                    <p class="text-slate-300">Active Creators</p>
                 </div>
-                <div>
-                    <div class="text-4xl font-headline font-bold mb-2">KES 45M+</div>
-                    <p class="text-primary-100">Generated by Creators</p>
+                <div class="group">
+                    <div class="text-5xl font-headline font-bold bg-gradient-to-r from-magenta-300 to-cyan-300 bg-clip-text text-transparent mb-2 group-hover:from-magenta-200 group-hover:to-cyan-200 transition-all">KES 45M+</div>
+                    <p class="text-slate-300">Generated by Creators</p>
                 </div>
-                <div>
-                    <div class="text-4xl font-headline font-bold mb-2">4.8★</div>
-                    <p class="text-primary-100">Community Rating</p>
+                <div class="group">
+                    <div class="text-5xl font-headline font-bold bg-gradient-to-r from-cyan-300 to-lime-300 bg-clip-text text-transparent mb-2 group-hover:from-cyan-200 group-hover:to-lime-200 transition-all">4.8★</div>
+                    <p class="text-slate-300">Community Rating</p>
                 </div>
-                <div>
-                    <div class="text-4xl font-headline font-bold mb-2">98%</div>
-                    <p class="text-primary-100">Would Recommend</p>
+                <div class="group">
+                    <div class="text-5xl font-headline font-bold bg-gradient-to-r from-lime-300 to-orange-300 bg-clip-text text-transparent mb-2 group-hover:from-lime-200 group-hover:to-orange-200 transition-all">98%</div>
+                    <p class="text-slate-300">Would Recommend</p>
                 </div>
             </div>
         </div>
@@ -384,149 +428,161 @@
 <section id="tools" class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
-            <h2 class="text-3xl sm:text-4xl font-headline font-bold text-text-primary mb-4">
-                Meet the <span class="text-primary">Bunifu Suite</span>
+            <h2 class="text-3xl sm:text-4xl font-headline font-bold text-slate-900 mb-4">
+                Meet the <span class="bg-gradient-to-r from-purple-600 to-magenta-600 bg-clip-text text-transparent">Bunifu Suite</span>
             </h2>
-            <p class="text-lg text-text-secondary font-body max-w-3xl mx-auto">
+            <p class="text-lg text-slate-600 font-body max-w-3xl mx-auto">
                 Four powerful AI tools designed specifically for African creators. 
                 Discover how these innovative solutions can transform your creative workflow.
             </p>
         </div>
         
         <div class="grid lg:grid-cols-2 gap-8">
-            <!-- JengaPrompts -->
-            <div class="bg-gradient-to-br from-primary-50 to-accent-50 rounded-2xl p-8 hover:shadow-2xl transition-all duration-300">
-                <div class="flex items-center mb-6">
-                    <div class="w-12 h-12 bg-primary rounded-xl flex items-center justify-center mr-4">
-                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-                        </svg>
+            <!-- JengaPrompts - Purple -->
+            <div class="group bg-gradient-to-br from-purple-50 to-purple-25 rounded-2xl p-8 hover:shadow-2xl transition-all duration-300 border-l-4 border-purple-600">
+                <div class="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div class="relative">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mr-4 group-hover:shadow-glow-purple transition-all">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-headline font-bold text-slate-900">JengaPrompts</h3>
+                            <p class="text-slate-600">AI-powered prompt generation</p>
+                        </div>
                     </div>
-                    <div>
-                        <h3 class="text-xl font-headline font-bold text-text-primary">JengaPrompts</h3>
-                        <p class="text-text-secondary">AI-powered prompt generation</p>
+                    
+                    <!-- Tool Description -->
+                    <div class="bg-white rounded-lg p-6 mb-6 border border-purple-100">
+                        <p class="text-slate-600 mb-4">
+                            Transform your creative ideas into powerful AI prompts that deliver consistent, 
+                            high-quality results. Perfect for generating marketing copy, design briefs, 
+                            and creative concepts tailored to the African market.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-xs font-medium">Marketing Copy</span>
+                            <span class="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-xs font-medium">Design Briefs</span>
+                            <span class="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-xs font-medium">Content Ideas</span>
+                        </div>
                     </div>
-                </div>
-                
-                <!-- Tool Description -->
-                <div class="bg-white rounded-lg p-6 mb-6">
-                    <p class="text-text-secondary mb-4">
-                        Transform your creative ideas into powerful AI prompts that deliver consistent, 
-                        high-quality results. Perfect for generating marketing copy, design briefs, 
-                        and creative concepts tailored to the African market.
-                    </p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="bg-primary-100 text-primary px-3 py-1 rounded-full text-xs font-medium">Marketing Copy</span>
-                        <span class="bg-primary-100 text-primary px-3 py-1 rounded-full text-xs font-medium">Design Briefs</span>
-                        <span class="bg-primary-100 text-primary px-3 py-1 rounded-full text-xs font-medium">Content Ideas</span>
+                    
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-slate-600">Used by 2,847 creators</span>
+                        <button class="text-purple-600 hover:text-purple-700 font-semibold">Learn More →</button>
                     </div>
-                </div>
-                
-                <div class="flex items-center justify-between">
-                    <span class="text-sm text-text-secondary">Used by 2,847 creators</span>
-                    <button class="text-accent hover:text-accent-600 font-semibold">Learn More →</button>
                 </div>
             </div>
             
-            <!-- VizPrompts Studio -->
-            <div class="bg-gradient-to-br from-secondary-50 to-success/10 rounded-2xl p-8 hover:shadow-2xl transition-all duration-300">
-                <div class="flex items-center mb-6">
-                    <div class="w-12 h-12 bg-secondary rounded-xl flex items-center justify-center mr-4">
-                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-                        </svg>
+            <!-- VizPrompts Studio - Magenta -->
+            <div class="group bg-gradient-to-br from-magenta-50 to-magenta-25 rounded-2xl p-8 hover:shadow-2xl transition-all duration-300 border-l-4 border-magenta-600">
+                <div class="absolute inset-0 bg-gradient-to-br from-magenta-500/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div class="relative">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-gradient-to-br from-magenta-500 to-magenta-600 rounded-xl flex items-center justify-center mr-4 group-hover:shadow-glow-magenta transition-all">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-headline font-bold text-slate-900">VizPrompts Studio</h3>
+                            <p class="text-slate-600">Real-time image creation</p>
+                        </div>
                     </div>
-                    <div>
-                        <h3 class="text-xl font-headline font-bold text-text-primary">VizPrompts Studio</h3>
-                        <p class="text-text-secondary">Real-time image creation</p>
+                    
+                    <!-- Tool Description -->
+                    <div class="bg-white rounded-lg p-6 mb-6 border border-magenta-100">
+                        <p class="text-slate-600 mb-4">
+                            Create stunning visuals with AI-powered image generation optimized for African 
+                            aesthetics and cultural contexts. From logos to social media graphics, 
+                            bring your vision to life instantly.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-magenta-100 text-magenta-700 px-3 py-1 rounded-full text-xs font-medium">Logo Design</span>
+                            <span class="bg-magenta-100 text-magenta-700 px-3 py-1 rounded-full text-xs font-medium">Social Graphics</span>
+                            <span class="bg-magenta-100 text-magenta-700 px-3 py-1 rounded-full text-xs font-medium">Brand Assets</span>
+                        </div>
                     </div>
-                </div>
-                
-                <!-- Tool Description -->
-                <div class="bg-white rounded-lg p-6 mb-6">
-                    <p class="text-text-secondary mb-4">
-                        Create stunning visuals with AI-powered image generation optimized for African 
-                        aesthetics and cultural contexts. From logos to social media graphics, 
-                        bring your vision to life instantly.
-                    </p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="bg-secondary-100 text-secondary px-3 py-1 rounded-full text-xs font-medium">Logo Design</span>
-                        <span class="bg-secondary-100 text-secondary px-3 py-1 rounded-full text-xs font-medium">Social Graphics</span>
-                        <span class="bg-secondary-100 text-secondary px-3 py-1 rounded-full text-xs font-medium">Brand Assets</span>
+                    
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-slate-600">1,923 images created today</span>
+                        <button class="text-magenta-600 hover:text-magenta-700 font-semibold">Learn More →</button>
                     </div>
-                </div>
-                
-                <div class="flex items-center justify-between">
-                    <span class="text-sm text-text-secondary">1,923 images created today</span>
-                    <button class="text-accent hover:text-accent-600 font-semibold">Learn More →</button>
                 </div>
             </div>
             
-            <!-- VibeShareKE -->
-            <div class="bg-gradient-to-br from-accent-50 to-primary-50 rounded-2xl p-8 hover:shadow-2xl transition-all duration-300">
-                <div class="flex items-center mb-6">
-                    <div class="w-12 h-12 bg-accent rounded-xl flex items-center justify-center mr-4">
-                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
-                        </svg>
+            <!-- VibeShareKE - Cyan -->
+            <div class="group bg-gradient-to-br from-cyan-50 to-cyan-25 rounded-2xl p-8 hover:shadow-2xl transition-all duration-300 border-l-4 border-cyan-600">
+                <div class="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div class="relative">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl flex items-center justify-center mr-4 group-hover:shadow-glow-cyan transition-all">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-headline font-bold text-slate-900">VibeShareKE</h3>
+                            <p class="text-slate-600">Community content feed</p>
+                        </div>
                     </div>
-                    <div>
-                        <h3 class="text-xl font-headline font-bold text-text-primary">VibeShareKE</h3>
-                        <p class="text-text-secondary">Community content feed</p>
+                    
+                    <!-- Tool Description -->
+                    <div class="bg-white rounded-lg p-6 mb-6 border border-cyan-100">
+                        <p class="text-slate-600 mb-4">
+                            Connect with Kenya's creative community through our dedicated social platform. 
+                            Share your work, get feedback, collaborate on projects, and discover 
+                            inspiration from fellow African creators.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-cyan-100 text-cyan-700 px-3 py-1 rounded-full text-xs font-medium">Community Feed</span>
+                            <span class="bg-cyan-100 text-cyan-700 px-3 py-1 rounded-full text-xs font-medium">Collaboration</span>
+                            <span class="bg-cyan-100 text-cyan-700 px-3 py-1 rounded-full text-xs font-medium">Networking</span>
+                        </div>
                     </div>
-                </div>
-                
-                <!-- Tool Description -->
-                <div class="bg-white rounded-lg p-6 mb-6">
-                    <p class="text-text-secondary mb-4">
-                        Connect with Kenya's creative community through our dedicated social platform. 
-                        Share your work, get feedback, collaborate on projects, and discover 
-                        inspiration from fellow African creators.
-                    </p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="bg-accent-100 text-accent px-3 py-1 rounded-full text-xs font-medium">Community Feed</span>
-                        <span class="bg-accent-100 text-accent px-3 py-1 rounded-full text-xs font-medium">Collaboration</span>
-                        <span class="bg-accent-100 text-accent px-3 py-1 rounded-full text-xs font-medium">Networking</span>
+                    
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-slate-600">347 posts today</span>
+                        <button class="text-cyan-600 hover:text-cyan-700 font-semibold">Learn More →</button>
                     </div>
-                </div>
-                
-                <div class="flex items-center justify-between">
-                    <span class="text-sm text-text-secondary">347 posts today</span>
-                    <button class="text-accent hover:text-accent-600 font-semibold">Learn More →</button>
                 </div>
             </div>
             
-            <!-- JengaAgent -->
-            <div class="bg-gradient-to-br from-success/10 to-secondary-50 rounded-2xl p-8 hover:shadow-2xl transition-all duration-300">
-                <div class="flex items-center mb-6">
-                    <div class="w-12 h-12 bg-success rounded-xl flex items-center justify-center mr-4">
-                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
-                        </svg>
+            <!-- JengaAgent - Lime -->
+            <div class="group bg-gradient-to-br from-lime-50 to-lime-25 rounded-2xl p-8 hover:shadow-2xl transition-all duration-300 border-l-4 border-lime-600">
+                <div class="absolute inset-0 bg-gradient-to-br from-lime-500/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div class="relative">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-gradient-to-br from-lime-500 to-lime-600 rounded-xl flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-headline font-bold text-slate-900">JengaAgent</h3>
+                            <p class="text-slate-600">AI assistant capabilities</p>
+                        </div>
                     </div>
-                    <div>
-                        <h3 class="text-xl font-headline font-bold text-text-primary">JengaAgent</h3>
-                        <p class="text-text-secondary">AI assistant capabilities</p>
+                    
+                    <!-- Tool Description -->
+                    <div class="bg-white rounded-lg p-6 mb-6 border border-lime-100">
+                        <p class="text-slate-600 mb-4">
+                            Your personal AI creative assistant trained specifically for the Kenyan market. 
+                            Get expert advice on content strategy, marketing campaigns, and creative 
+                            direction tailored to local and international audiences.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-lime-100 text-lime-700 px-3 py-1 rounded-full text-xs font-medium">Strategy Advice</span>
+                            <span class="bg-lime-100 text-lime-700 px-3 py-1 rounded-full text-xs font-medium">Market Insights</span>
+                            <span class="bg-lime-100 text-lime-700 px-3 py-1 rounded-full text-xs font-medium">Creative Direction</span>
+                        </div>
                     </div>
-                </div>
-                
-                <!-- Tool Description -->
-                <div class="bg-white rounded-lg p-6 mb-6">
-                    <p class="text-text-secondary mb-4">
-                        Your personal AI creative assistant trained specifically for the Kenyan market. 
-                        Get expert advice on content strategy, marketing campaigns, and creative 
-                        direction tailored to local and international audiences.
-                    </p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="bg-success-100 text-success px-3 py-1 rounded-full text-xs font-medium">Strategy Advice</span>
-                        <span class="bg-success-100 text-success px-3 py-1 rounded-full text-xs font-medium">Market Insights</span>
-                        <span class="bg-success-100 text-success px-3 py-1 rounded-full text-xs font-medium">Creative Direction</span>
+                    
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-slate-600">1,456 questions answered today</span>
+                        <button class="text-lime-600 hover:text-lime-700 font-semibold">Learn More →</button>
                     </div>
-                </div>
-                
-                <div class="flex items-center justify-between">
-                    <span class="text-sm text-text-secondary">1,456 questions answered today</span>
-                    <button class="text-accent hover:text-accent-600 font-semibold">Learn More →</button>
                 </div>
             </div>
         </div>
@@ -700,108 +756,116 @@
     </section>
 
     <!-- Success Stories & Testimonials -->
-    <section id="testimonials" class="py-20 bg-surface">
+    <section id="testimonials" class="py-20 bg-gradient-to-b from-slate-50 to-white">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl sm:text-4xl font-headline font-bold text-text-primary mb-4">
-                    Success Stories from <span class="text-primary">Kenya's Creators</span>
+                <h2 class="text-3xl sm:text-4xl font-headline font-bold text-slate-900 mb-4">
+                    Success Stories from <span class="bg-gradient-to-r from-purple-600 to-magenta-600 bg-clip-text text-transparent">Kenya's Creators</span>
                 </h2>
-                <p class="text-lg text-text-secondary font-body max-w-2xl mx-auto">
+                <p class="text-lg text-slate-600 font-body max-w-2xl mx-auto">
                     Hear from real creators who transformed their careers with AiCreatorsKE
                 </p>
             </div>
 
             <!-- Testimonials Carousel -->
             <div class="grid lg:grid-cols-3 gap-8 mb-12">
-                <!-- Testimonial 1: Designer -->
-                <div class="bg-white rounded-2xl p-8 shadow-testimonial hover:shadow-xl transition-all duration-300 group">
-                    <!-- Star Rating -->
-                    <div class="flex items-center mb-4">
-                        <div class="flex text-yellow-400">
-                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                <!-- Testimonial 1: Designer - Purple -->
+                <div class="group relative bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 border-l-4 border-purple-500">
+                    <div class="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="relative p-8">
+                        <!-- Star Rating -->
+                        <div class="flex items-center mb-4">
+                            <div class="flex text-yellow-400">
+                                <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                                <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                                <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                                <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                                <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                            </div>
+                            <span class="text-xs text-slate-500 ml-2">5.0 / 5.0</span>
                         </div>
-                        <span class="text-xs text-text-secondary ml-2">5.0 / 5.0</span>
-                    </div>
-                    
-                    <!-- Quote -->
-                    <p class="text-text-primary mb-6 font-body">
-                        "AiCreatorsKE gave me access to tools and a community that changed everything. In just 3 months, I went from struggling freelancer to landing my biggest client yet. The Bunifu Suite absolutely transformed my design workflow."
-                    </p>
-                    
-                    <!-- Author Info -->
-                    <div class="flex items-center border-t border-secondary-200 pt-6">
-                        <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-headline font-bold">
-                            AK
+                        
+                        <!-- Quote -->
+                        <p class="text-slate-700 mb-6 font-body">
+                            "AiCreatorsKE gave me access to tools and a community that changed everything. In just 3 months, I went from struggling freelancer to landing my biggest client yet. The Bunifu Suite absolutely transformed my design workflow."
+                        </p>
+                        
+                        <!-- Author Info -->
+                        <div class="flex items-center border-t border-slate-200 pt-6">
+                            <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center text-white font-headline font-bold">
+                                AK
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="font-headline font-bold text-slate-900">Amara Kipchoge</h4>
+                                <p class="text-sm text-slate-600">UI/UX Designer, Nairobi</p>
+                            </div>
                         </div>
-                        <div class="ml-4">
-                            <h4 class="font-headline font-bold text-text-primary">Amara Kipchoge</h4>
-                            <p class="text-sm text-text-secondary">UI/UX Designer, Nairobi</p>
+                        
+                        <!-- Badge -->
+                        <div class="mt-4 pt-4 border-t border-slate-200">
+                            <span class="inline-block bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-xs font-semibold">
+                                6-Figure Design Business
+                            </span>
                         </div>
-                    </div>
-                    
-                    <!-- Badge -->
-                    <div class="mt-4 pt-4 border-t border-secondary-200">
-                        <span class="inline-block bg-success/10 text-success px-3 py-1 rounded-full text-xs font-semibold">
-                            6-Figure Design Business
-                        </span>
                     </div>
                 </div>
                 
-                <!-- Testimonial 2: Content Creator -->
-                <div class="bg-white rounded-2xl p-8 shadow-testimonial hover:shadow-xl transition-all duration-300 group">
-                    <!-- Star Rating -->
-                    <div class="flex items-center mb-4">
-                        <div class="flex text-yellow-400">
-                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                <!-- Testimonial 2: Content Creator - Magenta -->
+                <div class="group relative bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 border-l-4 border-magenta-500">
+                    <div class="absolute inset-0 bg-gradient-to-br from-magenta-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="relative p-8">
+                        <!-- Star Rating -->
+                        <div class="flex items-center mb-4">
+                            <div class="flex text-yellow-400">
+                                <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                                <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                                <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                                <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                                <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                            </div>
+                            <span class="text-xs text-slate-500 ml-2">5.0 / 5.0</span>
                         </div>
-                        <span class="text-xs text-text-secondary ml-2">5.0 / 5.0</span>
-                    </div>
-                    
-                    <!-- Quote -->
-                    <p class="text-text-primary mb-6 font-body">
-                        "The combination of JengaPrompts and VizPrompts Studio helped me scale my YouTube channel from 10K to 150K subscribers in 6 months. The AI-generated content is indistinguishable from hand-crafted, yet 10x faster. This is the future of content creation!"
-                    </p>
-                    
-                    <!-- Author Info -->
-                    <div class="flex items-center border-t border-secondary-200 pt-6">
-                        <div class="w-12 h-12 bg-accent rounded-full flex items-center justify-center text-white font-headline font-bold">
-                            DJ
+                        
+                        <!-- Quote -->
+                        <p class="text-slate-700 mb-6 font-body">
+                            "The combination of JengaPrompts and VizPrompts Studio helped me scale my YouTube channel from 10K to 150K subscribers in 6 months. The AI-generated content is indistinguishable from hand-crafted, yet 10x faster. This is the future of content creation!"
+                        </p>
+                        
+                        <!-- Author Info -->
+                        <div class="flex items-center border-t border-slate-200 pt-6">
+                            <div class="w-12 h-12 bg-gradient-to-br from-magenta-500 to-magenta-600 rounded-full flex items-center justify-center text-white font-headline font-bold">
+                                DJ
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="font-headline font-bold text-slate-900">David Njoroge</h4>
+                                <p class="text-sm text-slate-600">YouTube Content Creator</p>
+                            </div>
                         </div>
-                        <div class="ml-4">
-                            <h4 class="font-headline font-bold text-text-primary">David Njoroge</h4>
-                            <p class="text-sm text-text-secondary">YouTube Content Creator</p>
+                        
+                        <!-- Badge -->
+                        <div class="mt-4 pt-4 border-t border-slate-200">
+                            <span class="inline-block bg-magenta-100 text-magenta-700 px-3 py-1 rounded-full text-xs font-semibold">
+                                150K+ Subscribers
+                            </span>
                         </div>
-                    </div>
-                    
-                    <!-- Badge -->
-                    <div class="mt-4 pt-4 border-t border-secondary-200">
-                        <span class="inline-block bg-accent/10 text-accent px-3 py-1 rounded-full text-xs font-semibold">
-                            150K+ Subscribers
-                        </span>
                     </div>
                 </div>
                 
-                <!-- Testimonial 3: Marketer -->
-                <div class="bg-white rounded-2xl p-8 shadow-testimonial hover:shadow-xl transition-all duration-300 group">
-                    <!-- Star Rating -->
-                    <div class="flex items-center mb-4">
-                        <div class="flex text-yellow-400">
-                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                <!-- Testimonial 3: Marketer - Cyan -->
+                <div class="group relative bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 border-l-4 border-cyan-500">
+                    <div class="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="relative p-8">
+                        <!-- Star Rating -->
+                        <div class="flex items-center mb-4">
+                            <div class="flex text-yellow-400">
+                                <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                                <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                                <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                                <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                                <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                            </div>
+                            <span class="text-xs text-slate-500 ml-2">5.0 / 5.0</span>
                         </div>
-                        <span class="text-xs text-text-secondary ml-2">5.0 / 5.0</span>
-                    </div>
                     
                     <!-- Quote -->
                     <p class="text-text-primary mb-6 font-body">
@@ -858,7 +922,7 @@
     </section>
 
     <!-- FAQ Section - Social Proof & Trust Building -->
-    <section class="py-20 bg-white">
+    <section class="py-20 bg-gradient-to-b from-white via-primary-50/30 to-white">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-3xl sm:text-4xl font-headline font-bold text-text-primary mb-4">
@@ -867,82 +931,143 @@
                 <p class="text-lg text-text-secondary font-body">
                     Everything you need to know about joining AiCreatorsKE
                 </p>
+                <div class="flex justify-center gap-2 mt-6">
+                    <div class="w-2 h-2 bg-primary rounded-full"></div>
+                    <div class="w-2 h-2 bg-accent rounded-full"></div>
+                    <div class="w-2 h-2 bg-secondary rounded-full"></div>
+                </div>
             </div>
             
             <!-- FAQ Items -->
             <div class="space-y-4">
                 <!-- FAQ 1 -->
-                <div class="bg-surface rounded-xl overflow-hidden border border-secondary-200 hover:border-primary transition-colors duration-300">
-                    <button class="faq-toggle w-full flex items-center justify-between p-6 text-left hover:bg-primary-50 transition-colors duration-200" onclick="toggleFAQ(this)">
-                        <h3 class="font-headline font-semibold text-text-primary pr-4">
+                <div class="group relative bg-white rounded-xl overflow-hidden border border-secondary-200 hover:border-primary hover:shadow-lg transition-all duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-r from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <button class="faq-toggle relative w-full flex items-center justify-between p-6 text-left hover:bg-primary-50 transition-all duration-200" onclick="toggleFAQ(this)">
+                        <h3 class="font-headline font-semibold text-text-primary pr-4 group-hover:text-primary transition-colors duration-200">
                             Is AiCreatorsKE free to join?
                         </h3>
-                        <svg class="w-5 h-5 text-primary flex-shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-5 h-5 text-primary flex-shrink-0 transition-all duration-300 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
                         </svg>
                     </button>
-                    <div class="faq-content hidden max-h-0 overflow-hidden transition-all duration-300">
-                        <div class="px-6 pb-6 text-text-secondary border-t border-secondary-200 pt-4">
-                            <p>Yes! AiCreatorsKE is completely free to join. Access the community, connect with other creators, and get started with the Bunifu Suite beta. Premium features and advanced tools are available with a paid membership, but the core community remains free forever.</p>
+                    <div class="faq-content hidden max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                        <div class="relative px-6 pb-6 text-text-secondary border-t border-secondary-100 pt-4 bg-gradient-to-b from-transparent to-primary-50/30">
+                            <p class="leading-relaxed">Yes! AiCreatorsKE is completely free to join. Access the community, connect with other creators, and get started with the Bunifu Suite beta. Premium features and advanced tools are available with a paid membership, but the core community remains free forever.</p>
+                            <div class="mt-4 pt-4 border-t border-secondary-100 text-xs text-accent">
+                                ✓ Verified by 5,247+ members
+                            </div>
                         </div>
                     </div>
                 </div>
                 
                 <!-- FAQ 2 -->
-                <div class="bg-surface rounded-xl overflow-hidden border border-secondary-200 hover:border-primary transition-colors duration-300">
-                    <button class="faq-toggle w-full flex items-center justify-between p-6 text-left hover:bg-primary-50 transition-colors duration-200" onclick="toggleFAQ(this)">
-                        <h3 class="font-headline font-semibold text-text-primary pr-4">
+                <div class="group relative bg-white rounded-xl overflow-hidden border border-secondary-200 hover:border-secondary hover:shadow-lg transition-all duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-r from-secondary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <button class="faq-toggle relative w-full flex items-center justify-between p-6 text-left hover:bg-secondary-50/30 transition-all duration-200" onclick="toggleFAQ(this)">
+                        <h3 class="font-headline font-semibold text-text-primary pr-4 group-hover:text-secondary transition-colors duration-200">
                             What's included in the Bunifu Suite?
                         </h3>
-                        <svg class="w-5 h-5 text-primary flex-shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-5 h-5 text-secondary flex-shrink-0 transition-all duration-300 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
                         </svg>
                     </button>
-                    <div class="faq-content hidden max-h-0 overflow-hidden transition-all duration-300">
-                        <div class="px-6 pb-6 text-text-secondary border-t border-secondary-200 pt-4">
-                            <p>The Bunifu Suite includes four powerful AI tools: <strong>JengaPrompts</strong> (AI prompt generation), <strong>VizPrompts Studio</strong> (image creation), <strong>VibeShareKE</strong> (community feed), and <strong>JengaAgent</strong> (AI assistant). All tools are optimized for the African market and come with live support.</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- FAQ 3 -->
-                <div class="bg-surface rounded-xl overflow-hidden border border-secondary-200 hover:border-primary transition-colors duration-300">
-                    <button class="faq-toggle w-full flex items-center justify-between p-6 text-left hover:bg-primary-50 transition-colors duration-200" onclick="toggleFAQ(this)">
-                        <h3 class="font-headline font-semibold text-text-primary pr-4">
+                    <div class="faq-content hidden max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                        <div class="relative px-6 pb-6 text-text-secondary border-t border-secondary-100 pt-4 bg-gradient-to-b from-transparent to-secondary-50/20">
+                            <p class="leading-relaxed">The Bunifu Suite includes four powerful AI tools: <strong class="text-text-primary">JengaPrompts</strong> (AI prompt generation), <strong class="text-text-primary">VizPrompts Studio</strong> (image creation), <strong class="text-text-primary">VibeShareKE</strong> (community feed), and <strong class="text-text-primary">JengaAgent</strong> (AI assistant). All tools are optimized for the African market and come with live support.</p>
+                            <div class="mt-4 pt-4 border-t border-secondary-100 grid grid-cols-2 gap-2 text-xs">
+                                <div class="✓ JengaPrompts">✓ Prompt Generation</div>
+                                <div class="✓ VizPrompts">✓ Image Creation</div>
+                                <div class="✓ VibeShareKE">✓ Community Feed</div>
+                            group relative bg-white rounded-xl overflow-hidden border border-secondary-200 hover:border-accent hover:shadow-lg transition-all duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-r from-accent/5 to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <button class="faq-toggle relative w-full flex items-center justify-between p-6 text-left hover:bg-accent-50/20 transition-all duration-200" onclick="toggleFAQ(this)">
+                        <h3 class="font-headline font-semibold text-text-primary pr-4 group-hover:text-accent transition-colors duration-200">
                             Can I use AI-generated content for commercial projects?
                         </h3>
+                        <svg class="w-5 h-5 text-accent flex-shrink-0 transition-all duration-300 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+                        </svg>
+                    </button>
+                    <div class="faq-content hidden max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                        <div class="relative px-6 pb-6 text-text-secondary border-t border-secondary-100 pt-4 bg-gradient-to-b from-transparent to-accent-50/20">
+                            <p class="leading-relaxed">Absolutely! All content generated through the Bunifu Suite comes with full commercial rights. You own any content you create and can use it for client work, businesses, and commercial projects without restrictions or additional licensing fees.</p>
+                            <div class="mt-4 pt-4 border-t border-secondary-100">
+                                <div class="inline-block bg-accent/10 text-accent px-3 py-1 rounded-full text-xs font-semibold">
+                                    ✓ Full commercial license included
+                                </div>
+                            </div
                         <svg class="w-5 h-5 text-primary flex-shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
                         </svg>
                     </button>
                     <div class="faq-content hidden max-h-0 overflow-hidden transition-all duration-300">
                         <div class="px-6 pb-6 text-text-secondary border-t border-secondary-200 pt-4">
-                            <p>Absolutely! All content generated through the Bunifu Suite comes with full commercial rights. You own any content you create and can use it for client work, businesses, and commercial projects without restrictions or additional licensing fees.</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- FAQ 4 -->
-                <div class="bg-surface rounded-xl overflow-hidden border border-secondary-200 hover:border-primary transition-colors duration-300">
-                    <button class="faq-toggle w-full flex items-center justify-between p-6 text-left hover:bg-primary-50 transition-colors duration-200" onclick="toggleFAQ(this)">
-                        <h3 class="font-headline font-semibold text-text-primary pr-4">
+                            group relative bg-white rounded-xl overflow-hidden border border-secondary-200 hover:border-primary hover:shadow-lg transition-all duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-r from-primary/5 to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <button class="faq-toggle relative w-full flex items-center justify-between p-6 text-left hover:bg-primary-50/20 transition-all duration-200" onclick="toggleFAQ(this)">
+                        <h3 class="font-headline font-semibold text-text-primary pr-4 group-hover:text-primary transition-colors duration-200">
                             How much can I realistically earn with AiCreatorsKE tools?
                         </h3>
-                        <svg class="w-5 h-5 text-primary flex-shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-5 h-5 text-primary flex-shrink-0 transition-all duration-300 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
                         </svg>
                     </button>
-                    <div class="faq-content hidden max-h-0 overflow-hidden transition-all duration-300">
-                        <div class="px-6 pb-6 text-text-secondary border-t border-secondary-200 pt-4">
-                            <p>Earnings vary based on your niche, effort, and market. Our members have generated over KES 45M+ this year. Success stories range from freelancers earning KES 50K-200K monthly to agency owners building multi-million shilling businesses. Check out our success stories for real examples.</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- FAQ 5 -->
-                <div class="bg-surface rounded-xl overflow-hidden border border-secondary-200 hover:border-primary transition-colors duration-300">
-                    <button class="faq-toggle w-full flex items-center justify-between p-6 text-left hover:bg-primary-50 transition-colors duration-200" onclick="toggleFAQ(this)">
-                        <h3 class="font-headline font-semibold text-text-primary pr-4">
+                    <div class="faq-content hidden max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                        <div class="relative px-6 pb-6 text-text-secondary border-t border-secondary-100 pt-4 bg-gradient-to-b from-transparent to-primary-50/20">
+                            <p class="leading-relaxed">Earnings vary based on your niche, effort, and market. Our members have generated over KES 45M+ this year. Success stories range from freelancers earning KES 50K-200K monthly to agency owners building multi-million shilling businesses. Check out our <strong class="text-primary">success stories</strong> for real examples.</p>
+                            <div class="mt-4 pt-4 border-t border-secondary-100 text-sm">
+                                <p class="font-semibold text-text-primary mb-2">Earning Benchmarks:</p>
+                                <div class="space-y-1 text-xs">
+                                    <div>• Beginner: KES 50K - KES 150K/month</div>
+                                    <div>• Intermediate: KES 150K - KES 500K/month</div>
+                                    <div>• Advanced: KES 500K+/month</div>
+                                </div>
+                            </div
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+                        </svg>
+                    </buttongroup relative bg-white rounded-xl overflow-hidden border border-secondary-200 hover:border-accent hover:shadow-lg transition-all duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-r from-accent/5 to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <button class="faq-toggle relative w-full flex items-center justify-between p-6 text-left hover:bg-accent-50/20 transition-all duration-200" onclick="toggleFAQ(this)">
+                        <h3 class="font-headline font-semibold text-text-primary pr-4 group-hover:text-accent transition-colors duration-200">
+                            Is there support if I get stuck?
+                        </h3>
+                        <svg class="w-5 h-5 text-accent flex-shrink-0 transition-all duration-300 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+                        </svg>
+                    </button>
+                    <div class="faq-content hidden max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                        <div class="relative px-6 pb-6 text-text-secondary border-t border-secondary-100 pt-4 bg-gradient-to-b from-transparent to-accent-50/20">
+                            <p class="leading-relaxed">Yes! We offer 24/7 community support through Discord, email assistance within 4 hours, and monthly live training sessions. Plus, 5,000+ members are always happy to help in our community forum. Premium members get priority support and 1-on-1 coaching.</p>
+                            <div class="mt-4 pt-4 border-t border-secondary-100">
+                                <div class="grid grid-cols-2 gap-2 text-xs font-semibold">
+                                    <div class="flex items-center gap-1">
+                                        <span class="w-2 h-2 bg-accent rounded-full"></span>
+                            group relative bg-white rounded-xl overflow-hidden border border-secondary-200 hover:border-secondary hover:shadow-lg transition-all duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-r from-secondary/5 to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <button class="faq-toggle relative w-full flex items-center justify-between p-6 text-left hover:bg-secondary-50/20 transition-all duration-200" onclick="toggleFAQ(this)">
+                        <h3 class="font-headline font-semibold text-text-primary pr-4 group-hover:text-secondary transition-colors duration-200">
+                            Can I cancel my membership anytime?
+                        </h3>
+                        <svg class="w-5 h-5 text-secondary flex-shrink-0 transition-all duration-300 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+                        </svg>
+                    </button>
+                    <div class="faq-content hidden max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                        <div class="relative px-6 pb-6 text-text-secondary border-t border-secondary-100 pt-4 bg-gradient-to-b from-transparent to-secondary-50/20">
+                            <p class="leading-relaxed">Absolutely. There are no long-term contracts. You can cancel your paid membership anytime with one click from your dashboard. Your free community membership is yours forever, and you'll still have access to all basic tools and the community network.</p>
+                            <div class="mt-4 pt-4 border-t border-secondary-100">
+                                <div class="bg-secondary-50/50 p-3 rounded-lg text-xs">
+                                    <p class="font-semibold text-text-primary mb-2">No Risk Guarantee:</p>
+                                    <p>• Cancel anytime, no questions asked</p>
+                                    <p>• Keep free membership forever</p>
+                                    <p>• 30-day money-back guarantee</p>
+                                </div>
+                            </div
+                                        1-on-1 coaching premium
+                                    </div>
+                                </div>
+                            </div
                             Is there support if I get stuck?
                         </h3>
                         <svg class="w-5 h-5 text-primary flex-shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -985,77 +1110,100 @@
     </section>
 
     <!-- Email Subscription Form -->
-    <section id="subscription" class="py-20 bg-gradient-to-br from-primary to-accent">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div class="bg-white/95 backdrop-blur-sm rounded-2xl p-8 md:p-12 shadow-2xl">
-                <h2 class="text-3xl sm:text-4xl font-headline font-bold text-text-primary mb-4">
+    <section id="subscription" class="relative py-24 bg-gradient-to-br from-primary via-secondary to-accent overflow-hidden">
+        <!-- Animated Background Elements -->
+        <div class="absolute inset-0 opacity-20">
+            <div class="absolute top-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl opacity-10 animate-pulse"></div>
+            <div class="absolute bottom-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl opacity-10" style="animation: pulse 4s infinite 2s;"></div>
+        </div>
+        
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <div class="bg-white/95 backdrop-blur-md rounded-2xl p-8 md:p-12 shadow-2xl border border-white/20">
+                <!-- Urgency Badge -->
+                <div class="inline-block mb-6 px-4 py-2 bg-red-50 text-red-600 rounded-full text-xs font-semibold border border-red-200 animate-pulse">
+                    ⏰ ONLY 47 SPOTS LEFT - Join Today
+                </div>
+                
+                <h2 class="text-3xl sm:text-4xl font-headline font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-4">
                     Start Your AI Creativity Journey Today
                 </h2>
-                <p class="text-lg text-text-secondary mb-8 max-w-2xl mx-auto">
+                <p class="text-lg text-text-secondary mb-2 max-w-2xl mx-auto">
                     Get instant access to exclusive Bunifu Suite beta tools, weekly AI creativity insights,
                     and join 5,000+ Kenyan creators pioneering the future of creative work.
                 </p>
                 
-                <!-- Single CTA Button -->
+                <!-- Value Proposition Badges -->
+                <div class="flex flex-wrap justify-center gap-3 mb-8">
+                    <span class="inline-flex items-center gap-1 px-3 py-1 bg-green-50 text-green-700 text-xs font-semibold rounded-full border border-green-200">
+                        ✓ 100% Free First Month
+                    </span>
+                    <span class="inline-flex items-center gap-1 px-3 py-1 bg-blue-50 text-blue-700 text-xs font-semibold rounded-full border border-blue-200">
+                        ✓ Cancel Anytime
+                    </span>
+                    <span class="inline-flex items-center gap-1 px-3 py-1 bg-purple-50 text-purple-700 text-xs font-semibold rounded-full border border-purple-200">
+                        ✓ 30-Day Money Back
+                    </span>
+                </div>
+                
+                <!-- Primary CTA Button -->
                 <div class="max-w-md mx-auto mb-8">
-                    <a href="https://aicreatorske-newsletter.beehiiv.com/" target="_blank" rel="noopener noreferrer" class="w-full btn-primary text-lg py-4 inline-block">
-                        Get Instant Access
-                        <svg class="w-5 h-5 ml-2 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
-                        </svg>
+                    <a href="https://aicreatorske-newsletter.beehiiv.com/" target="_blank" rel="noopener noreferrer" class="group relative w-full py-4 px-6 bg-gradient-to-r from-primary-600 to-secondary-600 text-white font-headline font-bold text-lg rounded-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 inline-block">
+                        <div class="absolute inset-0 bg-gradient-to-r from-primary to-secondary opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <span class="relative flex items-center justify-center">
+                            Get Instant Access
+                            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                            </svg>
+                        </span>
                     </a>
+                    <p class="text-xs text-gray-600 mt-3">Your privacy is protected. No spam ever.</p>
                 </div>
                 
                 <!-- Value Proposition -->
                 <div class="grid md:grid-cols-3 gap-6 mb-8">
-                    <div class="text-center">
-                        <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mx-auto mb-3">
+                    <div class="text-center p-4 bg-gradient-to-br from-primary-50 to-transparent rounded-lg hover:shadow-lg transition-all duration-300 border border-primary-100">
+                        <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mx-auto mb-3 shadow-lg">
                             <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
                             </svg>
                         </div>
-                        <h3 class="font-headline font-semibold text-text-primary mb-2">Instant Tool Access</h3>
+                        <h3 class="font-headline font-semibold text-text-primary mb-1">Instant Tool Access</h3>
                         <p class="text-sm text-text-secondary">Immediate beta access to all Bunifu Suite tools</p>
+                        <div class="mt-2 text-xs font-semibold text-primary">Worth KES 5,000/month</div>
                     </div>
-                    <div class="text-center">
-                        <div class="w-12 h-12 bg-accent rounded-full flex items-center justify-center mx-auto mb-3">
+                    <div class="text-center p-4 bg-gradient-to-br from-secondary-50 to-transparent rounded-lg hover:shadow-lg transition-all duration-300 border border-secondary-100">
+                        <div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center mx-auto mb-3 shadow-lg">
                             <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
                             </svg>
                         </div>
-                        <h3 class="font-headline font-semibold text-text-primary mb-2">Weekly Insights</h3>
+                        <h3 class="font-headline font-semibold text-text-primary mb-1">Weekly Content</h3>
                         <p class="text-sm text-text-secondary">Expert-curated AI creativity tips and trends</p>
+                        <div class="mt-2 text-xs font-semibold text-secondary">Every Monday Morning</div>
                     </div>
-                    <div class="text-center">
-                        <div class="w-12 h-12 bg-success rounded-full flex items-center justify-center mx-auto mb-3">
+                    <div class="text-center p-4 bg-gradient-to-br from-accent-50 to-transparent rounded-lg hover:shadow-lg transition-all duration-300 border border-accent-100">
+                        <div class="w-12 h-12 bg-accent rounded-full flex items-center justify-center mx-auto mb-3 shadow-lg">
                             <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
                             </svg>
                         </div>
-                        <h3 class="font-headline font-semibold text-text-primary mb-2">Community Access</h3>
+                        <h3 class="font-headline font-semibold text-text-primary mb-1">Community Access</h3>
                         <p class="text-sm text-text-secondary">Connect with 5,000+ creative professionals</p>
+                        <div class="mt-2 text-xs font-semibold text-accent">Networking & Collaboration</div>
                     </div>
                 </div>
                 
-                <!-- Trust Indicators -->
-                <div class="flex flex-wrap justify-center items-center gap-6 text-sm text-text-secondary">
-                    <div class="flex items-center">
-                        <svg class="w-4 h-4 text-success mr-2" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                        </svg>
-                        No spam, ever
-                    </div>
-                    <div class="flex items-center">
-                        <svg class="w-4 h-4 text-success mr-2" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                        </svg>
-                        Unsubscribe anytime
-                    </div>
-                    <div class="flex items-center">
-                        <svg class="w-4 h-4 text-success mr-2" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                        </svg>
-                        Privacy protected
+                <!-- Social Proof Section -->
+                <div class="border-t border-gray-200 pt-8 mb-0">
+                    <p class="text-sm font-semibold text-text-primary mb-4">Trusted by Creators from</p>
+                    <div class="flex flex-wrap justify-center gap-4 items-center text-xs font-semibold text-text-secondary">
+                        <div class="flex items-center gap-1">🇰🇪 Nairobi</div>
+                        <div class="h-5 w-px bg-secondary-200"></div>
+                        <div class="flex items-center gap-1">🇰🇪 Mombasa</div>
+                        <div class="h-5 w-px bg-secondary-200"></div>
+                        <div class="flex items-center gap-1">🇰🇪 Kisumu</div>
+                        <div class="h-5 w-px bg-secondary-200"></div>
+                        <div class="flex items-center gap-1">🌍 50+ Countries</div>
                     </div>
                 </div>
             </div>
@@ -1174,18 +1322,24 @@
             document.querySelectorAll('.faq-content').forEach(item => {
                 if (item !== content && !item.classList.contains('hidden')) {
                     item.classList.add('hidden');
+                    item.style.maxHeight = '0';
                     item.previousElementSibling.querySelector('svg').classList.remove('rotate-180');
                 }
             });
             
             if (isOpen) {
                 content.classList.add('hidden');
+                content.style.maxHeight = '0';
                 icon.classList.remove('rotate-180');
+                icon.style.transform = 'rotate(0deg)';
             } else {
                 content.classList.remove('hidden');
                 icon.classList.add('rotate-180');
+                icon.style.transform = 'rotate(180deg)';
                 // Smooth expand
-                content.style.maxHeight = content.scrollHeight + 'px';
+                setTimeout(() => {
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                }, 0);
             }
         }
 
@@ -1490,6 +1644,108 @@
             }, 15000); // Update every 15 seconds
         }
 
+        // Scroll Animations with Parallax Effect
+        function setupScrollAnimations() {
+            let ticking = false;
+            
+            window.addEventListener('scroll', function() {
+                if (!ticking) {
+                    window.requestAnimationFrame(function() {
+                        const scrollY = window.scrollY;
+                        
+                        // Parallax for hero elements
+                        const heroElements = document.querySelectorAll('[class*="blur-3xl"]');
+                        heroElements.forEach(el => {
+                            el.style.transform = `translateY(${scrollY * 0.5}px)`;
+                        });
+                        
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            });
+        }
+
+        // Enhanced Button Effects with Ripple
+        function setupButtonEffects() {
+            document.querySelectorAll('button, a.btn-primary, [class*="btn"]').forEach(button => {
+                button.addEventListener('mousemove', function(e) {
+                    const rect = this.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    
+                    // Create ripple effect
+                    const ripple = document.createElement('span');
+                    ripple.style.position = 'absolute';
+                    ripple.style.width = '20px';
+                    ripple.style.height = '20px';
+                    ripple.style.left = x + 'px';
+                    ripple.style.top = y + 'px';
+                    ripple.style.borderRadius = '50%';
+                    ripple.style.background = 'rgba(255, 255, 255, 0.6)';
+                    ripple.style.pointerEvents = 'none';
+                    ripple.style.animation = 'ripple-animation 0.6s ease-out';
+                    
+                    if (this.style.position !== 'fixed' && this.style.position !== 'absolute') {
+                        this.style.position = 'relative';
+                        this.style.overflow = 'hidden';
+                    }
+                    
+                    this.appendChild(ripple);
+                    setTimeout(() => ripple.remove(), 600);
+                });
+                
+                // Add scale effect on click
+                button.addEventListener('mousedown', function() {
+                    this.style.transform = 'scale(0.98)';
+                });
+                
+                button.addEventListener('mouseup', function() {
+                    this.style.transform = 'scale(1)';
+                });
+            });
+        }
+
+        // Intersection Observer for lazy animations
+        function setupIntersectionObserver() {
+            if ('IntersectionObserver' in window) {
+                const observerOptions = {
+                    threshold: 0.1,
+                    rootMargin: '0px 0px -100px 0px'
+                };
+                
+                const observer = new IntersectionObserver(function(entries) {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, observerOptions);
+                
+                // Observe all cards and sections
+                document.querySelectorAll('.bg-white, [class*="rounded-2xl"], [class*="shadow"]').forEach(el => {
+                    el.style.opacity = '0';
+                    el.style.transform = 'translateY(20px)';
+                    el.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+                    observer.observe(el);
+                });
+            }
+        }
+
+        // Smooth Scroll behavior enhancement
+        window.addEventListener('click', function(e) {
+            const href = e.target.getAttribute('href');
+            if (href && href.startsWith('#')) {
+                const target = document.querySelector(href);
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }
+        });
+
         // Counter Animation
         function animateCounters() {
             const counters = document.querySelectorAll('[id$="-members"], [id$="-today"], [id$="-accessed"]');
@@ -1516,6 +1772,9 @@
             detectVisitorType();
             animateCounters();
             runDemo(); // Start first demo
+            setupScrollAnimations();
+            setupButtonEffects();
+            setupIntersectionObserver();
         });
 
         // Exit Intent Detection

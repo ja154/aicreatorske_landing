@@ -8,65 +8,65 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // Primary Colors
+        // Primary: Bold Purple to Magenta
         primary: {
-          50: "#f7fafc",
-          100: "#edf2f7",
-          200: "#e2e8f0",
-          300: "#cbd5e0",
-          400: "#a0aec0",
-          500: "#718096",
-          600: "#4a5568",
-          700: "#2d3748",
-          800: "#1a202c",
-          900: "#171923",
-          DEFAULT: "#000000",
+          50: "#f5f3ff",
+          100: "#ede9fe",
+          200: "#ddd6fe",
+          300: "#c4b5fd",
+          400: "#a78bfa",
+          500: "#9333ea",
+          600: "#7c3aed",
+          700: "#6d28d9",
+          800: "#5b21b6",
+          900: "#4c1d95",
+          DEFAULT: "#9333ea",
         },
         
-        // Secondary Colors
+        // Secondary: Vibrant Magenta
         secondary: {
-          50: "#f7fafc",
-          100: "#edf2f7",
-          200: "#e2e8f0",
-          300: "#cbd5e0",
-          400: "#a0aec0",
-          500: "#718096",
-          600: "#4a5568",
-          700: "#2d3748",
-          800: "#1a202c",
-          900: "#171923",
-          DEFAULT: "#4a5568",
+          50: "#fdf2f8",
+          100: "#fce7f3",
+          200: "#fbcfe8",
+          300: "#f8a3d8",
+          400: "#f472b6",
+          500: "#ec4899",
+          600: "#db2777",
+          700: "#be185d",
+          800: "#9d174d",
+          900: "#5f0f40",
+          DEFAULT: "#ec4899",
         },
         
-        // Accent Colors
+        // Accent: Electric Cyan
         accent: {
-          50: "#f7fafc",
-          100: "#edf2f7",
-          200: "#e2e8f0",
-          300: "#cbd5e0",
-          400: "#a0aec0",
-          500: "#718096",
-          600: "#4a5568",
-          700: "#2d3748",
-          800: "#1a202c",
-          900: "#171923",
-          DEFAULT: "#a0aec0",
+          50: "#ecf9ff",
+          100: "#cff3ff",
+          200: "#a5e8ff",
+          300: "#67d9ff",
+          400: "#06b6d4",
+          500: "#0891b2",
+          600: "#0e7490",
+          700: "#155e75",
+          800: "#164e63",
+          900: "#0f2f46",
+          DEFAULT: "#06b6d4",
         },
         
         // Background Colors
         background: "#ffffff",
-        surface: "#f7fafc",
+        surface: "#f9f5ff",
         
         // Text Colors
         text: {
-          primary: "#000000",
-          secondary: "#4a5568",
+          primary: "#0f172a",
+          secondary: "#475569",
         },
         
-        // Status Colors
-        success: "#2d3748",
-        warning: "#718096",
-        error: "#1a202c",
+        // Status Colors  
+        success: "#84cc16",
+        warning: "#f97316",
+        error: "#ef4444",
       },
       
       fontFamily: {
@@ -89,10 +89,12 @@ module.exports = {
       },
       
       boxShadow: {
-        'cta': '0 4px 12px rgba(0, 0, 0, 0.1)',
-        'cta-hover': '0 6px 16px rgba(0, 0, 0, 0.15)',
-        'testimonial': '0 2px 8px rgba(0, 0, 0, 0.1)',
-        'terracotta': '0 4px 12px rgba(0, 0, 0, 0.1)',
+        'cta': '0 0 20px rgba(147, 51, 234, 0.3)',
+        'cta-hover': '0 0 30px rgba(236, 72, 153, 0.4)',
+        'testimonial': '0 8px 16px rgba(0, 0, 0, 0.08)',
+        'glow-purple': '0 0 30px rgba(147, 51, 234, 0.4)',
+        'glow-magenta': '0 0 30px rgba(236, 72, 153, 0.4)',
+        'glow-cyan': '0 0 30px rgba(6, 182, 212, 0.3)',
       },
       
       borderWidth: {
